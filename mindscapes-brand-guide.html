@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MindScapes — Brand Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,700;1,9..144,800&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --emerald: #00C27A;
+  --emerald-d: #00956E;
+  --cyan: #00E5FF;
+  --cyan-d: #00B8CC;
+  --glow: #00FF9D;
+  --midnight: #050F1A;
+  --dark: #071826;
+  --panel: #0A2030;
+  --panel-l: #0E2538;
+  --steel: #0D2B3E;
+  --mist: #8FAFC0;
+  --mist-l: #B0CDD9;
+  --white: #F2FAF7;
+  --max-w: 980px;
+  --gutter: 40px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--midnight);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* COVER */
+.cover {
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px var(--gutter);
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(0,194,122,0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(0,229,255,0.07) 0%, transparent 50%);
+  pointer-events: none;
+}
+.cover-content { max-width: var(--max-w); margin: 0 auto; position: relative; z-index: 1; width: 100%; }
+.cover .eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 32px;
+}
+.cover h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+.cover h1 strong {
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--emerald) 30%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cover .subtitle {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(20px, 2.5vw, 28px);
+  color: var(--mist-l);
+  line-height: 1.4;
+  margin-bottom: 64px;
+  max-width: 680px;
+}
+.cover-meta {
+  padding-top: 40px;
+  border-top: 1px solid rgba(0,194,122,0.15);
+  display: flex;
+  gap: 56px;
+  flex-wrap: wrap;
+}
+.cover-meta div .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+.cover-meta div .value {
+  font-size: 14px;
+  color: var(--mist-l);
+  font-weight: 400;
+}
+
+/* SECTION */
+section.chapter {
+  padding: 100px 0;
+  border-top: 1px solid rgba(0,194,122,0.08);
+}
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.chapter-number {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  opacity: 0.75;
+  margin-bottom: 16px;
+}
+.chapter-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.chapter-title em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald) 30%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.lead {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--mist-l);
+  line-height: 1.55;
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+p { font-size: 16px; color: var(--mist-l); line-height: 1.85; margin-bottom: 18px; }
+p strong { color: var(--white); font-weight: 500; }
+h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--white);
+  margin: 40px 0 14px;
+  letter-spacing: -0.01em;
+}
+h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin: 32px 0 12px;
+}
+
+/* PULLED THESIS */
+.thesis-card {
+  background: linear-gradient(180deg, rgba(0,194,122,0.06), rgba(0,229,255,0.03));
+  border: 1px solid rgba(0,194,122,0.15);
+  border-radius: 18px;
+  padding: 56px 48px;
+  margin: 48px 0;
+  text-align: center;
+}
+.thesis-card .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  opacity: 0.8;
+  margin-bottom: 18px;
+}
+.thesis-card .thesis-line {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(28px, 4.5vw, 44px);
+  color: var(--white);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+.thesis-card .thesis-line em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* BRAND LINE BLOCKS */
+.brand-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+}
+.brand-stack-row {
+  background: var(--panel);
+  border: 1px solid rgba(0,194,122,0.1);
+  border-radius: 14px;
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.brand-stack-row .role {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  opacity: 0.85;
+}
+.brand-stack-row .text {
+  font-family: 'Fraunces', serif;
+  color: var(--white);
+}
+.brand-stack-row .text.size-1 { font-weight: 700; font-size: 32px; letter-spacing: -0.02em; line-height: 1.1; }
+.brand-stack-row .text.size-1 em { font-style: italic; background: linear-gradient(135deg, var(--emerald), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.brand-stack-row .text.size-2 { font-weight: 600; font-style: italic; font-size: 26px; color: var(--emerald); }
+.brand-stack-row .text.size-3 { font-weight: 300; font-size: 22px; line-height: 1.4; }
+.brand-stack-row .text.size-4 { font-weight: 300; font-size: 16px; line-height: 1.7; color: var(--mist-l); }
+
+/* COLOR PALETTE */
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin: 32px 0;
+}
+.swatch {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.swatch-color {
+  height: 110px;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+}
+.swatch-info {
+  background: var(--panel);
+  padding: 14px 16px;
+}
+.swatch-info .name { font-weight: 600; font-size: 13px; color: var(--white); margin-bottom: 4px; }
+.swatch-info .hex { font-size: 11px; color: var(--mist); opacity: 0.7; font-weight: 500; letter-spacing: 0.05em; }
+.swatch-info .role { font-size: 11px; color: var(--mist); opacity: 0.55; margin-top: 6px; line-height: 1.5; }
+
+/* TYPOGRAPHY SHOWCASE */
+.type-block {
+  background: var(--panel);
+  border: 1px solid rgba(0,194,122,0.1);
+  border-radius: 14px;
+  padding: 32px 36px;
+  margin: 20px 0;
+}
+.type-block .meta {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  opacity: 0.7;
+  margin-bottom: 18px;
+}
+.type-sample-1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 52px;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  line-height: 1.05;
+}
+.type-sample-1 em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.type-sample-2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--mist-l);
+  line-height: 1.4;
+}
+.type-sample-3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--white);
+  line-height: 1.4;
+}
+.type-sample-4 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--mist-l);
+  line-height: 1.75;
+}
+.type-sample-5 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+}
+
+/* VOICE TWO-COLUMN */
+.voice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 32px 0;
+}
+.voice-card {
+  border-radius: 14px;
+  padding: 28px 30px;
+  border: 1px solid rgba(0,194,122,0.1);
+}
+.voice-card.yes {
+  background: linear-gradient(180deg, rgba(0,194,122,0.06), transparent);
+}
+.voice-card.no {
+  background: linear-gradient(180deg, rgba(255,80,80,0.04), transparent);
+  border-color: rgba(255,120,120,0.15);
+}
+.voice-card .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.voice-card.yes .label { color: var(--emerald); }
+.voice-card.no .label { color: #FF9090; }
+.voice-card ul { list-style: none; }
+.voice-card li {
+  padding: 9px 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--mist-l);
+  padding-left: 22px;
+  position: relative;
+  border-bottom: 1px solid rgba(0,194,122,0.06);
+}
+.voice-card li:last-child { border-bottom: none; }
+.voice-card.yes li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--emerald);
+  font-weight: 700;
+}
+.voice-card.no li::before {
+  content: '−';
+  position: absolute;
+  left: 0;
+  color: #FF9090;
+  font-weight: 700;
+}
+
+/* LIST */
+.brand-list {
+  list-style: none;
+  margin: 24px 0;
+}
+.brand-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,194,122,0.08);
+  font-size: 15px;
+  color: var(--mist-l);
+  line-height: 1.65;
+  padding-left: 22px;
+  position: relative;
+}
+.brand-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 12px;
+  height: 1px;
+  background: var(--emerald);
+}
+.brand-list li strong { color: var(--white); font-weight: 500; }
+
+/* PLACEHOLDER NOTICE */
+.placeholder-notice {
+  background: rgba(255,200,80,0.06);
+  border: 1px dashed rgba(255,200,80,0.3);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 32px 0;
+}
+.placeholder-notice .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #FFC850;
+  opacity: 0.95;
+  margin-bottom: 10px;
+}
+.placeholder-notice p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--mist-l);
+}
+
+/* SIGNATURE */
+.signature {
+  text-align: center;
+  padding: 100px var(--gutter);
+  border-top: 1px solid rgba(0,194,122,0.08);
+  background: var(--dark);
+}
+.signature .wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 64px;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+.signature .wordmark .mind { font-weight: 300; color: var(--white); }
+.signature .wordmark .scapes {
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.signature .line {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--emerald);
+  margin-bottom: 36px;
+}
+.signature .copy {
+  font-size: 12px;
+  color: var(--mist);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 760px) {
+  .brand-stack-row { grid-template-columns: 1fr; gap: 12px; }
+  .voice-grid { grid-template-columns: 1fr; }
+  .cover-meta { gap: 24px; }
+}
+
+/* PRINT */
+@media print {
+  body { background: white; color: black; }
+  .cover, section.chapter { page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-content">
+    <div class="eyebrow">Brand Guide · Strategic Foundation</div>
+    <h1>Mind<strong>Scapes</strong></h1>
+    <div class="subtitle">A brand built on layers — and what happens when they connect.</div>
+    <div class="cover-meta">
+      <div>
+        <div class="label">Prepared For</div>
+        <div class="value">Tonya Witherspoon, Founder &amp; CEO</div>
+      </div>
+      <div>
+        <div class="label">Version</div>
+        <div class="value">Foundation · 2026</div>
+      </div>
+      <div>
+        <div class="label">Status</div>
+        <div class="value">Language locked · Visual rules pending logo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01: THE THESIS -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-number">01 · The Thesis</div>
+    <h2 class="chapter-title">Connection <em>compounds.</em></h2>
+    <p class="lead">MindScapes is not a consulting firm. It is the connector between the layers most organizations build in isolation.</p>
+
+    <p>Most organizations invest in infrastructure, hire for workforce, and chase AI in separate motions. Each effort is well-funded. Each is well-intentioned. And each is largely disconnected from the others. The result is a familiar one — a stack of capabilities that doesn't add up to a system.</p>
+
+    <p><strong>MindScapes was built to solve that.</strong> Not by adding another layer to the stack, but by connecting the layers already there. The math changes when systems connect: infrastructure plus workforce plus AI isn't six. It's nine. The whole emerges as something greater than the sum of its parts.</p>
+
+    <div class="thesis-card">
+      <div class="label">The Operating Principle</div>
+      <div class="thesis-line">2 + 2 = <em>9</em></div>
+    </div>
+
+    <p>Even, even, odd. The math is deliberately wrong by ordinary arithmetic — and deliberately right by the math of emergent systems. <strong>Connection isn't additive. It's compounding.</strong> The same two layers connected by an architect produce more than the two layers operated in parallel. That's the entire business.</p>
+  </div>
+</section>
+
+<!-- 02: THE LANGUAGE SYSTEM -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-number">02 · The Language System</div>
+    <h2 class="chapter-title">Five lines that do <em>five different jobs.</em></h2>
+    <p class="lead">A brand isn't one tagline. It's a hierarchy of language, where each line earns the line above and below it.</p>
+
+    <div class="brand-stack">
+
+      <div class="brand-stack-row">
+        <div class="role">The Name</div>
+        <div class="text size-1">Mind<em>Scapes</em></div>
+      </div>
+
+      <div class="brand-stack-row">
+        <div class="role">The Word</div>
+        <div class="text size-2">Layers.</div>
+      </div>
+
+      <div class="brand-stack-row">
+        <div class="role">The Line</div>
+        <div class="text size-2">Connection compounds.</div>
+      </div>
+
+      <div class="brand-stack-row">
+        <div class="role">The Headline</div>
+        <div class="text size-3">Innovation doesn't scale without the layers beneath it.</div>
+      </div>
+
+      <div class="brand-stack-row">
+        <div class="role">The Positioning</div>
+        <div class="text size-4">MindScapes connects the systems most organizations build in silos — infrastructure, workforce, and AI — into one architecture for digital transformation.</div>
+      </div>
+
+    </div>
+
+    <h3>How they work together</h3>
+    <p>Each line is sized for a different purpose. <strong>The Name</strong> is the brand itself — plural, dimensional, layered intelligence terrains compressed into two compound words. <strong>The Word</strong> is the brand's mascot — a single noun that earns repetition across talks, decks, and t-shirts. <strong>The Line</strong> is the worldview — a truth claim about how value is created, not a sales pitch. <strong>The Headline</strong> is the position — why MindScapes exists. <strong>The Positioning</strong> is the proof — what we actually do.</p>
+
+    <p>Read top to bottom, they form a manifesto:</p>
+
+    <div class="thesis-card" style="text-align: left;">
+      <div class="thesis-line" style="font-size: clamp(20px, 2.6vw, 28px); line-height: 1.5; font-weight: 500;">
+        <span style="color: var(--mist-l); font-weight: 300; font-style: normal; font-size: 0.7em; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 16px; font-family: 'Outfit', sans-serif;">A Manifesto in Five Lines</span>
+        <strong style="background: linear-gradient(135deg, var(--emerald), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-style: italic;">Layers.</strong><br>
+        Connection compounds.<br>
+        Innovation doesn't scale without the layers beneath it.<br>
+        MindScapes connects the systems most organizations build in silos<br>
+        — infrastructure, workforce, and AI —<br>
+        into one architecture for digital transformation.<br>
+        <span style="font-size: 0.7em; color: var(--emerald); font-style: italic; font-weight: 400;">— MindScapes.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03: VOICE & TONE -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-number">03 · Voice &amp; Tone</div>
+    <h2 class="chapter-title">Visionary, with <em>warmth.</em></h2>
+    <p class="lead">The MindScapes voice is the voice of someone who has been right about the future for thirty years — and is too gracious to remind you of it.</p>
+
+    <p>The voice is <strong>visionary but never preachy</strong>, <strong>technical but never cold</strong>, <strong>confident but never severe</strong>. It treats the reader as a peer — someone smart enough to follow without being talked down to. It assumes the audience is sophisticated, and it earns their attention by being precise, not loud.</p>
+
+    <p>The voice is also <strong>efficiency-engineered</strong>. Every word does work. There are no throat-clearings, no consultant filler, no &quot;we believe that&quot; or &quot;in today's world&quot; intros. If a sentence can be cut, it gets cut. If a word can be replaced with a sharper one, it is.</p>
+
+    <h3>The voice in practice</h3>
+
+    <div class="voice-grid">
+      <div class="voice-card yes">
+        <div class="label">Sounds Like</div>
+        <ul>
+          <li>Innovation doesn't scale without the layers beneath it.</li>
+          <li>We don't replace your team. We connect them to the people who make their vision executable.</li>
+          <li>A pattern of seeing what's next.</li>
+          <li>Built across layers.</li>
+          <li>The math changes when systems connect.</li>
+        </ul>
+      </div>
+
+      <div class="voice-card no">
+        <div class="label">Does Not Sound Like</div>
+        <ul>
+          <li>We are passionate about empowering digital transformation.</li>
+          <li>Leveraging best-in-class synergies to drive value.</li>
+          <li>In today's rapidly evolving landscape...</li>
+          <li>Disrupting the status quo through innovation.</li>
+          <li>We help organizations unlock their potential.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Tone shifts by audience</h3>
+    <ul class="brand-list">
+      <li><strong>Enterprise clients:</strong> Confident peer. Speak to outcomes, not features. Lead with what you'll get, not what we do.</li>
+      <li><strong>Partners and operators:</strong> Conversational equal. Share thinking, not pitches. Acknowledge the work it takes to build across silos.</li>
+      <li><strong>Funders and grant makers:</strong> Precise and proof-rich. Specifics over generalities. Names, numbers, and outcomes.</li>
+      <li><strong>Speaking and press:</strong> Provocative but generous. Make the audience smarter. Always cite the teams who built the work.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 04: THE WORLDVIEW -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-number">04 · The Worldview</div>
+    <h2 class="chapter-title">What MindScapes <em>believes.</em></h2>
+    <p class="lead">A brand isn't what you sell. It's what you believe — and what you'd be willing to argue for in a room full of people who disagree.</p>
+
+    <ul class="brand-list">
+      <li><strong>Innovation is a systems problem, not a technology problem.</strong> AI alone doesn't transform an organization. Workforce alone doesn't either. Infrastructure alone certainly doesn't. The transformation happens at the seams.</li>
+      <li><strong>The connector is the highest-leverage role in any system.</strong> Not the inventor. Not the operator. The person who can see across layers and bring the right people to each one. That person creates the conditions for emergence.</li>
+      <li><strong>The future is being built in the middle of the country.</strong> Capital concentrates on the coasts. Talent, infrastructure opportunity, and the willingness to build are concentrated in the heartland. The math of where value will be created next is changing.</li>
+      <li><strong>Foresight is a pattern, not a prediction.</strong> MindScapes doesn't predict the future. It recognizes that what's coming next looks a lot like what was already being built — quietly, by the people who saw it first.</li>
+      <li><strong>Teams build things. Individuals connect them.</strong> Every system MindScapes has helped build was built by a team. The MindScapes role is never to replace the team. It is to be the connective tissue between teams that wouldn't otherwise meet.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 05: VISUAL IDENTITY -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-number">05 · Visual Identity</div>
+    <h2 class="chapter-title">Color, type, and the <em>logo to come.</em></h2>
+    <p class="lead">The visual system is built on contrast — depth meets light, emerald meets cyan, weight meets italic — to mirror the brand's core idea of layers connecting.</p>
+
+    <h3>Color palette · Deep Intelligence</h3>
+    <div class="palette-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#050F1A;"></div>
+        <div class="swatch-info">
+          <div class="name">Midnight</div>
+          <div class="hex">#050F1A</div>
+          <div class="role">Primary background. The deep. Where layers live.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#00C27A;"></div>
+        <div class="swatch-info">
+          <div class="name">Emerald</div>
+          <div class="hex">#00C27A</div>
+          <div class="role">The foundation. Infrastructure, workforce, roots.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#00E5FF;"></div>
+        <div class="swatch-info">
+          <div class="name">Cyan</div>
+          <div class="hex">#00E5FF</div>
+          <div class="role">The intelligence layer. AI, signal, what's coming.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#00FF9D;"></div>
+        <div class="swatch-info">
+          <div class="name">Glow</div>
+          <div class="hex">#00FF9D</div>
+          <div class="role">The convergence point. Where 2+2 becomes 9.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8FAFC0;"></div>
+        <div class="swatch-info">
+          <div class="name">Steel Mist</div>
+          <div class="hex">#8FAFC0</div>
+          <div class="role">Supporting text. Quiet, not invisible.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F2FAF7; border-bottom: 1px solid rgba(0,0,0,0.06);"></div>
+        <div class="swatch-info">
+          <div class="name">Soft White</div>
+          <div class="hex">#F2FAF7</div>
+          <div class="role">Light surfaces. Print. Letterhead.</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top: 32px;">The signature move is the <strong>emerald-to-cyan gradient</strong> — used in display headlines (the italic <em>Scapes</em>, the emphasis em-tag), in dividers, and on hover states. It represents the journey from infrastructure to intelligence — the brand's central transformation.</p>
+
+    <h3 style="margin-top: 48px;">Typography</h3>
+
+    <div class="type-block">
+      <div class="meta">Display · Fraunces (Serif, 300-700)</div>
+      <div class="type-sample-1">The layers <em>beneath</em> innovation.</div>
+      <div class="type-sample-2" style="margin-top: 16px;">Italic Fraunces carries the brand's warmth — editorial gravity with motion.</div>
+    </div>
+
+    <div class="type-block">
+      <div class="meta">Body &amp; UI · Outfit (Sans-serif, 300-700)</div>
+      <div class="type-sample-3">Section headings and structural moments use Outfit at 500-700.</div>
+      <div class="type-sample-4" style="margin-top: 14px;">Body copy lives in Outfit 300 — light enough to feel modern, weighted enough to read with comfort across paragraphs. The pairing of a humanist serif (Fraunces) with a geometric sans (Outfit) creates the same contrast as the brand's core idea: depth meets precision.</div>
+      <div class="type-sample-5" style="margin-top: 18px;">Eyebrow · Outfit 600 · 0.32em tracking</div>
+    </div>
+
+    <h3 style="margin-top: 48px;">Logo</h3>
+    <div class="placeholder-notice">
+      <div class="label">In Development</div>
+      <p>The MindScapes logo is intentionally not finalized at the time of this guide. The strategic foundation, language system, and color/type palette were locked first so that the logo could emerge from a complete brand — not the other way around. The wordmark direction (Fraunces, "Mind" in 300 weight + italic "<em>Scapes</em>" with gradient) is established. Final mark, supporting icon, and full lockup system will be added to this guide once locked.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06: APPLICATION PRINCIPLES -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-number">06 · Application Principles</div>
+    <h2 class="chapter-title">How the brand <em>behaves</em> in the wild.</h2>
+    <p class="lead">A brand isn't a logo. It's a way of showing up that people recognize even when the logo isn't there.</p>
+
+    <h3>Hierarchy in any context</h3>
+    <ul class="brand-list">
+      <li><strong>The word "Layers."</strong> can appear standalone — as a chapter header, talk title, section break. It's the brand's solo vocal note.</li>
+      <li><strong>"Connection compounds."</strong> is the brand line. It belongs at the close of a keynote, on a hat, at the foot of a proposal, in an email signature.</li>
+      <li><strong>"Innovation doesn't scale without the layers beneath it."</strong> is the hero line. It opens the website, a deck, a major speech.</li>
+      <li><strong>The full positioning sentence</strong> is the formal introduction. Used in bios, proposals, partnerships, press.</li>
+    </ul>
+
+    <h3>Do</h3>
+    <ul class="brand-list">
+      <li><strong>Lead with outcomes</strong>, not capabilities. The reader cares what they get, not what we do.</li>
+      <li><strong>Name the teams.</strong> Every project credited on the website lists the people who built it. The connector never claims to have built it alone.</li>
+      <li><strong>Use specifics.</strong> $33M in student wages, 350,000 tests in 90 days, 700+ partnerships. Specifics earn trust.</li>
+      <li><strong>Let the typography breathe.</strong> Generous whitespace, restrained color, italic emphasis used sparingly so it stays meaningful.</li>
+      <li><strong>Use the italic em-tag deliberately.</strong> Only on the word that compounds the meaning of the sentence. Not for emphasis. For revelation.</li>
+    </ul>
+
+    <h3>Don't</h3>
+    <ul class="brand-list">
+      <li><strong>Don't use consultant filler.</strong> "Empowering," "leveraging," "best-in-class," "unlock potential." Banned across the brand.</li>
+      <li><strong>Don't over-explain "layers."</strong> The word is doing the work. Trust the reader to lean in.</li>
+      <li><strong>Don't make Tonya the hero of every story.</strong> She's the connector. The teams are the heroes.</li>
+      <li><strong>Don't introduce new colors.</strong> The Deep Intelligence palette is the brand. Resist the urge to add seasonal or campaign palettes.</li>
+      <li><strong>Don't compete with the wordmark.</strong> "MindScapes" with the italic "Scapes" is already the brand. Supporting graphics support — they don't shout.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 07: WHAT'S NEXT -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-number">07 · What's Next</div>
+    <h2 class="chapter-title">A foundation built to <em>compound.</em></h2>
+    <p class="lead">This guide captures the strategic foundation. The visual identity system will lock in once the logo is finalized.</p>
+
+    <h3>To be added in the next version</h3>
+    <ul class="brand-list">
+      <li><strong>Final logo system</strong> — primary mark, wordmark lockup, monochrome version, favicon, app icon, clear space rules, minimum sizes</li>
+      <li><strong>Visual rules library</strong> — divider treatments, callout styles, photo direction, motion principles, illustration guidance</li>
+      <li><strong>Templated assets</strong> — proposal cover, keynote opening slide, social media frames, email signature, business card, letterhead</li>
+      <li><strong>Photography direction</strong> — infrastructure in landscape, people in workspaces, the heartland in context</li>
+      <li><strong>Sound &amp; motion</strong> — if and when MindScapes extends to video, podcast, or animation</li>
+    </ul>
+
+    <p style="margin-top: 40px;">The brand has a foundation now. The language is locked. The worldview is clear. What comes next is the visual system that earns the right to carry it.</p>
+  </div>
+</section>
+
+<!-- SIGNATURE PAGE -->
+<section class="signature">
+  <div class="wordmark">
+    <span class="mind">Mind</span><span class="scapes">Scapes</span>
+  </div>
+  <div class="line">Connection compounds.</div>
+  <div class="copy">Brand Guide · Foundation Edition · © 2026 MindScapes · Wichita, Kansas</div>
+</section>
+
+</body>
+</html>
