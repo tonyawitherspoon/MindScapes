@@ -30,7 +30,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--midnight);
   color: var(--white);
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', 'Aptos', 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-weight: 300;
   line-height: 1.75;
   font-size: 16px;
@@ -66,7 +66,7 @@ body {
   margin-bottom: 32px;
 }
 .cover h1 {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   font-weight: 300;
   font-size: clamp(48px, 8vw, 96px);
   line-height: 1;
@@ -83,7 +83,7 @@ body {
   background-clip: text;
 }
 .cover .subtitle {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   font-weight: 400;
   font-style: italic;
   font-size: clamp(20px, 2.5vw, 28px);
@@ -134,7 +134,7 @@ section.chapter {
   margin-bottom: 16px;
 }
 .chapter-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   font-weight: 600;
   font-size: clamp(32px, 5vw, 52px);
   line-height: 1.1;
@@ -151,7 +151,7 @@ section.chapter {
   background-clip: text;
 }
 .lead {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   font-weight: 300;
   font-style: italic;
   font-size: 22px;
@@ -163,7 +163,7 @@ section.chapter {
 p { font-size: 16px; color: var(--mist-l); line-height: 1.85; margin-bottom: 18px; }
 p strong { color: var(--white); font-weight: 500; }
 h3 {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   font-weight: 600;
   font-size: 24px;
   color: var(--white);
@@ -198,7 +198,7 @@ h4 {
   margin-bottom: 18px;
 }
 .thesis-card .thesis-line {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   font-weight: 600;
   font-size: clamp(28px, 4.5vw, 44px);
   color: var(--white);
@@ -240,7 +240,7 @@ h4 {
   opacity: 0.85;
 }
 .brand-stack-row .text {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   color: var(--white);
 }
 .brand-stack-row .text.size-1 { font-weight: 700; font-size: 32px; letter-spacing: -0.02em; line-height: 1.1; }
@@ -293,7 +293,7 @@ h4 {
   margin-bottom: 18px;
 }
 .type-sample-1 {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   font-weight: 600;
   font-size: 52px;
   letter-spacing: -0.02em;
@@ -309,7 +309,7 @@ h4 {
   background-clip: text;
 }
 .type-sample-2 {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   font-weight: 400;
   font-style: italic;
   font-size: 26px;
@@ -317,21 +317,21 @@ h4 {
   line-height: 1.4;
 }
 .type-sample-3 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', 'Aptos', 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-weight: 600;
   font-size: 20px;
   color: var(--white);
   line-height: 1.4;
 }
 .type-sample-4 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', 'Aptos', 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-weight: 300;
   font-size: 16px;
   color: var(--mist-l);
   line-height: 1.75;
 }
 .type-sample-5 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', 'Aptos', 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 0.32em;
@@ -418,6 +418,88 @@ h4 {
 }
 .brand-list li strong { color: var(--white); font-weight: 500; }
 
+/* LANGUAGE BY CONTEXT TABLE */
+.lang-context-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 28px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,194,122,0.12);
+}
+.lang-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr 1.2fr;
+  gap: 0;
+  border-bottom: 1px solid rgba(0,194,122,0.08);
+}
+.lang-row:last-child { border-bottom: none; }
+.lang-row > div {
+  padding: 22px 22px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.lang-row.lang-header > div {
+  background: rgba(0,194,122,0.08);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  padding: 14px 22px;
+}
+.lang-row .lang-line {
+  background: rgba(0,194,122,0.04);
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--white);
+  border-right: 1px solid rgba(0,194,122,0.08);
+  font-weight: 400;
+}
+.lang-row .lang-line strong {
+  font-weight: 600;
+  color: var(--white);
+}
+.lang-row .lang-when {
+  color: var(--mist-l);
+  border-right: 1px solid rgba(0,194,122,0.08);
+}
+.lang-row .lang-when strong { color: var(--white); }
+.lang-row .lang-dont {
+  color: var(--mist);
+  font-style: italic;
+}
+@media (max-width: 720px) {
+  .lang-row { grid-template-columns: 1fr; }
+  .lang-row .lang-line, .lang-row .lang-when { border-right: none; }
+  .lang-row.lang-header { display: none; }
+  .lang-row > div { padding: 16px 18px; }
+  .lang-row .lang-line {
+    background: rgba(0,194,122,0.08);
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0,194,122,0.08);
+  }
+  .lang-row .lang-when::before {
+    content: 'USE IT WHEN ';
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--emerald);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .lang-row .lang-dont::before {
+    content: 'DON\'T USE IT WHEN ';
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: #FF9090;
+    display: block;
+    margin-bottom: 6px;
+  }
+}
+
 /* PLACEHOLDER NOTICE */
 .placeholder-notice {
   background: rgba(255,200,80,0.06);
@@ -449,7 +531,7 @@ h4 {
   background: var(--dark);
 }
 .signature .wordmark {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   font-size: 64px;
   letter-spacing: -0.02em;
   margin-bottom: 18px;
@@ -465,7 +547,7 @@ h4 {
   background-clip: text;
 }
 .signature .line {
-  font-family: 'Fraunces', serif;
+  font-family: 'Fraunces', 'Georgia', 'Times New Roman', serif;
   font-style: italic;
   font-weight: 400;
   font-size: 22px;
@@ -580,7 +662,7 @@ h4 {
 
     <div class="thesis-card" style="text-align: left;">
       <div class="thesis-line" style="font-size: clamp(20px, 2.6vw, 28px); line-height: 1.5; font-weight: 500;">
-        <span style="color: var(--mist-l); font-weight: 300; font-style: normal; font-size: 0.7em; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 16px; font-family: 'Outfit', sans-serif;">A Manifesto in Five Lines</span>
+        <span style="color: var(--mist-l); font-weight: 300; font-style: normal; font-size: 0.7em; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 16px; font-family: 'Outfit', 'Aptos', 'Segoe UI', system-ui, -apple-system, sans-serif;">A Manifesto in Five Lines</span>
         <strong style="background: linear-gradient(135deg, var(--emerald), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-style: italic;">Layers.</strong><br>
         Connection compounds.<br>
         Innovation doesn't scale without the layers beneath it.<br>
@@ -664,7 +746,8 @@ h4 {
     <h2 class="chapter-title">Color, type, and the <em>logo to come.</em></h2>
     <p class="lead">The visual system is built on contrast — depth meets light, emerald meets cyan, weight meets italic — to mirror the brand's core idea of layers connecting.</p>
 
-    <h3>Color palette · Deep Intelligence</h3>
+    <h3>Color palette · Deep Intelligence (Digital)</h3>
+    <p style="margin-bottom: 24px; color: var(--mist-l); font-size: 15px;">The primary palette is optimized for digital surfaces — websites, screens, and dark-mode contexts. All colors pass WCAG AA contrast standards on the Midnight background.</p>
     <div class="palette-grid">
       <div class="swatch">
         <div class="swatch-color" style="background:#050F1A;"></div>
@@ -695,7 +778,7 @@ h4 {
         <div class="swatch-info">
           <div class="name">Glow</div>
           <div class="hex">#00FF9D</div>
-          <div class="role">The convergence point. Where 2+2 becomes 9.</div>
+          <div class="role">The convergence point. Where 2+2 becomes 9. Digital only.</div>
         </div>
       </div>
       <div class="swatch">
@@ -718,12 +801,61 @@ h4 {
 
     <p style="margin-top: 32px;">The signature move is the <strong>emerald-to-cyan gradient</strong> — used in display headlines (the italic <em>Scapes</em>, the emphasis em-tag), in dividers, and on hover states. It represents the journey from infrastructure to intelligence — the brand's central transformation.</p>
 
+    <h3 style="margin-top: 56px;">Color palette · Print &amp; Light Mode</h3>
+    <p style="margin-bottom: 24px; color: var(--mist-l); font-size: 15px;">A parallel palette of darker, deeper variants for use on white/light backgrounds and for CMYK print production. These keep the brand's identity while passing WCAG AA contrast standards on light surfaces.</p>
+    <div class="palette-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#00956E;"></div>
+        <div class="swatch-info">
+          <div class="name">Emerald Deep</div>
+          <div class="hex">#00956E</div>
+          <div class="role">Print &amp; light-mode emerald. C100 M22 Y76 K9.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0077A0;"></div>
+        <div class="swatch-info">
+          <div class="name">Cyan Deep</div>
+          <div class="hex">#0077A0</div>
+          <div class="role">Print &amp; light-mode cyan. C100 M30 Y0 K20.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1A2E3F;"></div>
+        <div class="swatch-info">
+          <div class="name">Ink</div>
+          <div class="hex">#1A2E3F</div>
+          <div class="role">Body text on white. Replaces midnight on light surfaces.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#5B7A8C;"></div>
+        <div class="swatch-info">
+          <div class="name">Steel</div>
+          <div class="hex">#5B7A8C</div>
+          <div class="role">Supporting text on white. The light-mode version of Steel Mist.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="placeholder-notice" style="margin-top: 28px; background: rgba(0,194,122,0.05); border-color: rgba(0,194,122,0.2);">
+      <div class="label" style="color: var(--emerald);">Accessibility &amp; Print Notes</div>
+      <p style="font-size: 14px; line-height: 1.7;">
+        <strong style="color: var(--white);">Digital palette</strong> (Emerald #00C27A, Cyan #00E5FF, Glow #00FF9D) passes WCAG AA on Midnight backgrounds but fails AA on white. Use the Print &amp; Light Mode palette for any white/light surface, business cards, letterhead, proposals, or printed materials.<br><br>
+        <strong style="color: var(--white);">Glow #00FF9D is outside standard CMYK gamut</strong> — it cannot be reliably reproduced in print. Use Emerald Deep #00956E in print contexts where Glow would otherwise appear.<br><br>
+        <strong style="color: var(--white);">The emerald-to-cyan gradient</strong> uses #00C27A → #00E5FF for digital and #00956E → #0077A0 for print.
+      </p>
+    </div>
+
     <h3 style="margin-top: 48px;">Typography</h3>
 
     <div class="type-block">
       <div class="meta">Display · Fraunces (Serif, 300-700)</div>
       <div class="type-sample-1">The layers <em>beneath</em> innovation.</div>
       <div class="type-sample-2" style="margin-top: 16px;">Italic Fraunces carries the brand's warmth — editorial gravity with motion.</div>
+      <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(0,194,122,0.1); font-size: 12.5px; color: var(--mist); line-height: 1.7;">
+        <strong style="color: var(--emerald); letter-spacing: 0.05em;">FALLBACK STACK:</strong> Fraunces is available on both Google Fonts and Adobe Fonts. Web fallback: <code style="background: rgba(0,194,122,0.08); padding: 2px 6px; border-radius: 3px;">'Fraunces', 'Georgia', 'Times New Roman', serif</code>. For Microsoft Office documents, substitute <strong style="color: var(--white);">Georgia</strong> or <strong style="color: var(--white);">Cambria</strong>.
+      </div>
     </div>
 
     <div class="type-block">
@@ -731,6 +863,18 @@ h4 {
       <div class="type-sample-3">Section headings and structural moments use Outfit at 500-700.</div>
       <div class="type-sample-4" style="margin-top: 14px;">Body copy lives in Outfit 300 — light enough to feel modern, weighted enough to read with comfort across paragraphs. The pairing of a humanist serif (Fraunces) with a geometric sans (Outfit) creates the same contrast as the brand's core idea: depth meets precision.</div>
       <div class="type-sample-5" style="margin-top: 18px;">Eyebrow · Outfit 600 · 0.32em tracking</div>
+      <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(0,194,122,0.1); font-size: 12.5px; color: var(--mist); line-height: 1.7;">
+        <strong style="color: var(--emerald); letter-spacing: 0.05em;">FALLBACK STACK:</strong> Outfit is Google Fonts only. Web fallback: <code style="background: rgba(0,194,122,0.08); padding: 2px 6px; border-radius: 3px;">'Outfit', 'Aptos', 'Segoe UI', system-ui, -apple-system, sans-serif</code>. For Microsoft Office, use <strong style="color: var(--white);">Aptos</strong> (the new Office default) or <strong style="color: var(--white);">Segoe UI</strong>. On Mac, substitute <strong style="color: var(--white);">SF Pro</strong> or <strong style="color: var(--white);">Helvetica Neue</strong>.
+      </div>
+    </div>
+
+    <div class="placeholder-notice" style="margin-top: 28px; background: rgba(0,194,122,0.05); border-color: rgba(0,194,122,0.2);">
+      <div class="label" style="color: var(--emerald);">Typography Notes</div>
+      <p style="font-size: 14px; line-height: 1.7;">
+        <strong style="color: var(--white);">Typography is the brand's primary visual identity.</strong> The wordmark "MindScapes" (Fraunces, "Mind" in regular weight + italic "Scapes" with gradient) is doing the work that other brands assign to a separate icon. Treat type with the discipline you'd give a logo.<br><br>
+        <strong style="color: var(--white);">The italic emphasis is meaningful, not decorative.</strong> Use italic Fraunces only on the word that compounds the meaning of the sentence — never for general emphasis. It's the brand's way of pointing.<br><br>
+        <strong style="color: var(--white);">The Fraunces + Outfit pairing is the working draft.</strong> If the brand's designers propose an alternative pairing during logo finalization, the principle to preserve is the contrast: a humanist serif with italics that earn their place, paired with a clean geometric sans for body work.
+      </p>
     </div>
 
     <h3 style="margin-top: 48px;">Logo</h3>
@@ -748,12 +892,54 @@ h4 {
     <h2 class="chapter-title">How the brand <em>behaves</em> in the wild.</h2>
     <p class="lead">A brand isn't a logo. It's a way of showing up that people recognize even when the logo isn't there.</p>
 
-    <h3>Hierarchy in any context</h3>
+    <h3>Language by context</h3>
+    <p>Each line in the brand system does a different job. Knowing which line to lead with depends on whether the audience knows you yet, how much context they have, and how cold the first impression is. This table is the field guide.</p>
+
+    <div class="lang-context-table">
+      <div class="lang-row lang-header">
+        <div>Line</div>
+        <div>Use it when</div>
+        <div>Don't use it when</div>
+      </div>
+
+      <div class="lang-row">
+        <div class="lang-line"><strong>Layers.</strong></div>
+        <div class="lang-when">A standalone moment — chapter break, talk title, keynote section header, t-shirt, hat, social graphic that needs one word.</div>
+        <div class="lang-dont">As a tagline beneath the logo. As an introduction to strangers. It's a punctuation mark, not an explanation.</div>
+      </div>
+
+      <div class="lang-row">
+        <div class="lang-line"><strong>Innovation doesn't scale without the layers beneath it.</strong></div>
+        <div class="lang-when"><strong>The lead line. Use this first whenever the audience is cold.</strong> Homepage hero, deck opener, conference banner, cold pitch email. Carries the full weight of a first impression.</div>
+        <div class="lang-dont">When you're already inside a conversation. When brevity matters more than persuasion.</div>
+      </div>
+
+      <div class="lang-row">
+        <div class="lang-line"><strong>Connection compounds.</strong></div>
+        <div class="lang-when">Insider moments. Footer of every page. Email signature. Close of a keynote. Hat, mug, signoff line. People who already know the brand will recognize the thesis.</div>
+        <div class="lang-dont">As the only line on a cold first-impression billboard or banner. It requires context to land — give it that context first.</div>
+      </div>
+
+      <div class="lang-row">
+        <div class="lang-line"><strong>2 + 2 = 9</strong></div>
+        <div class="lang-when">Inside a talk, on a slide explaining the thesis, in a deck where you can spend a beat unpacking it. Best as a reveal, not an opener.</div>
+        <div class="lang-dont">In any context where you can't immediately explain "even, even, odd — addition AND multiplication, plus one for emergence."</div>
+      </div>
+
+      <div class="lang-row">
+        <div class="lang-line"><strong>The full positioning sentence</strong><br><span style="font-weight: 300; font-size: 13px; opacity: 0.7;">("MindScapes connects the systems most organizations build in silos…")</span></div>
+        <div class="lang-when">Bios, partner intros, proposals, press queries, the "About" line on a panel page. Anywhere a complete, formal introduction is required.</div>
+        <div class="lang-dont">On a t-shirt. In a hero. Anywhere brevity matters more than completeness.</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 48px;">Hierarchy at a glance</h3>
     <ul class="brand-list">
-      <li><strong>The word "Layers."</strong> can appear standalone — as a chapter header, talk title, section break. It's the brand's solo vocal note.</li>
-      <li><strong>"Connection compounds."</strong> is the brand line. It belongs at the close of a keynote, on a hat, at the foot of a proposal, in an email signature.</li>
-      <li><strong>"Innovation doesn't scale without the layers beneath it."</strong> is the hero line. It opens the website, a deck, a major speech.</li>
-      <li><strong>The full positioning sentence</strong> is the formal introduction. Used in bios, proposals, partnerships, press.</li>
+      <li><strong>Cold first impressions → lead with the headline.</strong> "Innovation doesn't scale without the layers beneath it." Punchy. Self-explanatory. Earns the rest.</li>
+      <li><strong>Standalone moments → use "Layers."</strong> One word. A pause. An invitation to lean in.</li>
+      <li><strong>Insider materials → close with "Connection compounds."</strong> They get it. Let them feel like they get it.</li>
+      <li><strong>Talks and decks → reveal "2+2=9" as a beat.</strong> Set it up, then drop it. Don't lead with the math.</li>
+      <li><strong>Formal introductions → the full positioning sentence.</strong> When you need to be complete, not punchy.</li>
     </ul>
 
     <h3>Do</h3>
@@ -803,6 +989,15 @@ h4 {
   </div>
   <div class="line">Connection compounds.</div>
   <div class="copy">Brand Guide · Foundation Edition · © 2026 MindScapes · Wichita, Kansas</div>
+  <div style="margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(0,194,122,0.12); max-width: 480px; margin-left: auto; margin-right: auto;">
+    <a href="mindscapes-language-toolkit.html" style="font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--emerald); text-decoration: none; opacity: 0.7; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">→ The Language Toolkit · For Insiders</a>
+    <div style="font-size: 12px; color: var(--mist); opacity: 0.55; margin-top: 8px; font-style: italic; font-family: 'Fraunces', 'Georgia', serif;">Where the rich phrases live — keynote-ready language, LinkedIn examples, and the math that doesn't belong on the website.</div>
+
+    <div style="margin-top: 22px; padding-top: 22px; border-top: 1px solid rgba(0,194,122,0.08);">
+      <a href="mindscapes-font-review.html" style="font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--emerald); text-decoration: none; opacity: 0.7; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">→ Typography Review · Five Directions</a>
+      <div style="font-size: 12px; color: var(--mist); opacity: 0.55; margin-top: 8px; font-style: italic; font-family: 'Fraunces', 'Georgia', serif;">Working comparison of font pairings for Andrew, Cait, and Steve to weigh in on.</div>
+    </div>
+  </div>
 </section>
 
 </body>

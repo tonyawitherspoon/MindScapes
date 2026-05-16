@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Font Comparison — MindScapes</title>
+<meta name="description" content="Five typography directions for MindScapes. A working comparison for Andrew, Cait, and Steve."/>
+
+<!-- All 5 font families loaded -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,700&family=Outfit:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --emerald: #00C27A;
+  --emerald-d: #00956E;
+  --cyan: #00E5FF;
+  --cyan-d: #00B8CC;
+  --glow: #00FF9D;
+  --midnight: #050F1A;
+  --dark: #071826;
+  --panel: #0A2030;
+  --panel-l: #0E2538;
+  --steel: #0D2B3E;
+  --mist: #8FAFC0;
+  --mist-l: #B0CDD9;
+  --white: #F2FAF7;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--midnight);
+  color: var(--white);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════ STICKY NAV ═══════ */
+.tocnav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 14px 32px;
+  background: rgba(5,15,26,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,194,122,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.tocnav .brand {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  color: var(--white);
+  text-decoration: none;
+}
+.tocnav .brand strong {
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.tocnav .jump {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.tocnav .jump a {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist-l);
+  text-decoration: none;
+  padding: 7px 12px;
+  border: 1px solid rgba(0,194,122,0.18);
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+.tocnav .jump a:hover {
+  border-color: var(--emerald);
+  color: var(--emerald);
+}
+.tocnav .back {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  text-decoration: none;
+}
+
+/* ═══════ COVER ═══════ */
+.cover {
+  padding: 130px 40px 80px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0,194,122,0.1);
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(0,194,122,0.1) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(0,229,255,0.07) 0%, transparent 50%);
+}
+.cover-content { max-width: 920px; margin: 0 auto; position: relative; z-index: 1; }
+.cover .eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 22px;
+}
+.cover h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: clamp(36px, 5.5vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.cover h1 strong {
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cover .subtitle {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(17px, 2vw, 21px);
+  color: var(--mist-l);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 720px;
+}
+.cover-note {
+  margin-top: 28px;
+  padding: 22px 28px;
+  background: rgba(244, 228, 188, 0.05);
+  border-left: 3px solid #E6D29A;
+  border-radius: 0 12px 12px 0;
+  max-width: 760px;
+}
+.cover-note p {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--white);
+  margin: 0;
+}
+.cover-note p strong {
+  color: #FFD988;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
+/* ═══════ DIRECTION CARD ═══════ */
+.direction {
+  padding: 72px 32px 80px;
+  border-bottom: 1px solid rgba(0,194,122,0.08);
+}
+.direction-inner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Direction header */
+.direction-header {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
+  align-items: flex-start;
+}
+.direction-num {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+.direction-meta .label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 10px;
+}
+.direction-meta h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3.5vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+.direction-meta .stack {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--mist-l);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.direction-meta .stack strong { color: var(--white); font-weight: 600; }
+.direction-meta .vibe {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--mist);
+  line-height: 1.7;
+}
+
+/* ═══════ SAMPLE PREVIEW BOX ═══════ */
+.sample {
+  background: var(--dark);
+  border: 1px solid rgba(0,194,122,0.1);
+  border-radius: 16px;
+  padding: 56px 56px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.sample::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 15% 80%, rgba(0,194,122,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.sample > * { position: relative; z-index: 1; }
+
+/* Each sample-row is one "brand moment" */
+.sample-row {
+  padding: 22px 0;
+  border-bottom: 1px dashed rgba(0,194,122,0.08);
+}
+.sample-row:last-child { border-bottom: none; }
+.sample-row .row-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  opacity: 0.65;
+  margin-bottom: 14px;
+}
+
+/* ─── Hero ─── */
+.s-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 16px;
+}
+.s-h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.s-h1 em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.s-tagline {
+  font-size: 15.5px;
+  color: var(--mist-l);
+  line-height: 1.65;
+  max-width: 640px;
+}
+
+/* ─── Section break ─── */
+.s-section-break {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-top: 8px;
+}
+.s-section-break .word {
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.01em;
+}
+.s-section-break .punctuation {
+  color: var(--mist);
+  font-size: 28px;
+}
+
+/* ─── Approach H2 ─── */
+.s-h2 {
+  font-size: clamp(24px, 3.3vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--white);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.s-h2 em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Body paragraph ─── */
+.s-body {
+  font-size: 15.5px;
+  color: var(--mist-l);
+  line-height: 1.75;
+  max-width: 680px;
+}
+.s-body strong { color: var(--white); font-weight: 500; }
+.s-body em { color: var(--white); font-style: italic; }
+
+/* ─── Proof card ─── */
+.s-card {
+  background: var(--panel);
+  border: 1px solid rgba(0,194,122,0.12);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-top: 4px;
+  max-width: 540px;
+}
+.s-card .card-tag {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 10px;
+}
+.s-card .card-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.s-card .card-body {
+  font-size: 13.5px;
+  color: var(--mist-l);
+  line-height: 1.65;
+}
+.s-card .card-body strong { color: var(--white); font-weight: 500; }
+
+/* ─── Italic emphasis demo ─── */
+.s-italic-demo {
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--white);
+  font-weight: 500;
+}
+.s-italic-demo em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ═══════════════════════════════════════════════════════
+   DIRECTION-SPECIFIC FONT FAMILIES
+   Each direction scopes its fonts via a wrapper class.
+═══════════════════════════════════════════════════════ */
+
+/* DIRECTION 0 — Current baseline (Fraunces + Outfit) */
+.dir-current .sample,
+.dir-current .sample * {
+  font-family: 'Outfit', sans-serif;
+}
+.dir-current .sample .s-eyebrow,
+.dir-current .sample .row-label {
+  font-family: 'Outfit', sans-serif;
+}
+.dir-current .sample .s-h1,
+.dir-current .sample .s-h2,
+.dir-current .sample .s-section-break .word,
+.dir-current .sample .s-italic-demo,
+.dir-current .sample .s-card .card-title {
+  font-family: 'Fraunces', serif;
+}
+.dir-current .sample .s-h1 em,
+.dir-current .sample .s-h2 em,
+.dir-current .sample .s-italic-demo em {
+  font-family: 'Fraunces', serif;
+}
+
+/* DIRECTION 1 — Editorial Authority (Crimson Pro + Inter) */
+.dir-editorial .sample,
+.dir-editorial .sample * {
+  font-family: 'Inter', sans-serif;
+}
+.dir-editorial .sample .s-h1,
+.dir-editorial .sample .s-h2,
+.dir-editorial .sample .s-section-break .word,
+.dir-editorial .sample .s-italic-demo,
+.dir-editorial .sample .s-card .card-title {
+  font-family: 'Crimson Pro', serif;
+}
+.dir-editorial .sample .s-h1 em,
+.dir-editorial .sample .s-h2 em,
+.dir-editorial .sample .s-italic-demo em {
+  font-family: 'Crimson Pro', serif;
+}
+
+/* DIRECTION 2 — Modern Operator (Manrope display + Inter body) */
+.dir-modern .sample,
+.dir-modern .sample * {
+  font-family: 'Inter', sans-serif;
+}
+.dir-modern .sample .s-h1,
+.dir-modern .sample .s-h2,
+.dir-modern .sample .s-section-break .word,
+.dir-modern .sample .s-italic-demo,
+.dir-modern .sample .s-card .card-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+.dir-modern .sample .s-h1 em,
+.dir-modern .sample .s-h2 em,
+.dir-modern .sample .s-italic-demo em {
+  font-family: 'Manrope', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+}
+
+/* DIRECTION 3 — Heritage Architect (Spectral + Manrope) */
+.dir-heritage .sample,
+.dir-heritage .sample * {
+  font-family: 'Manrope', sans-serif;
+}
+.dir-heritage .sample .s-h1,
+.dir-heritage .sample .s-h2,
+.dir-heritage .sample .s-section-break .word,
+.dir-heritage .sample .s-italic-demo,
+.dir-heritage .sample .s-card .card-title {
+  font-family: 'Spectral', serif;
+  font-weight: 600;
+}
+.dir-heritage .sample .s-h1 em,
+.dir-heritage .sample .s-h2 em,
+.dir-heritage .sample .s-italic-demo em {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* DIRECTION 4 — Heartland Modern (Inter for everything, weight contrast) */
+.dir-heartland .sample,
+.dir-heartland .sample * {
+  font-family: 'Inter', sans-serif;
+}
+.dir-heartland .sample .s-h1,
+.dir-heartland .sample .s-h2,
+.dir-heartland .sample .s-section-break .word,
+.dir-heartland .sample .s-italic-demo,
+.dir-heartland .sample .s-card .card-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.dir-heartland .sample .s-h1 em,
+.dir-heartland .sample .s-h2 em,
+.dir-heartland .sample .s-italic-demo em {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  /* Use color contrast in lieu of italic flourish */
+}
+/* Heartland: replace gradient italic with weight contrast */
+.dir-heartland .sample .s-eyebrow {
+  color: var(--emerald);
+}
+
+/* ═══════ FOOTER ═══════ */
+footer {
+  background: var(--dark);
+  padding: 80px 40px;
+  text-align: center;
+  border-top: 1px solid rgba(0,194,122,0.1);
+}
+footer .wordmark {
+  font-family: 'Fraunces', serif;
+  font-size: 38px;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+footer .wordmark .mind { font-weight: 300; color: var(--white); }
+footer .wordmark .scapes {
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer .response-block {
+  margin-top: 32px;
+  padding: 24px 28px;
+  background: var(--panel);
+  border: 1px solid rgba(0,194,122,0.18);
+  border-radius: 12px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer .response-block .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 10px;
+}
+footer .response-block p {
+  font-size: 14px;
+  color: var(--mist-l);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+footer .response-block a {
+  color: var(--emerald);
+  text-decoration: none;
+}
+footer .copy {
+  margin-top: 28px;
+  font-size: 12px;
+  color: var(--mist);
+  opacity: 0.55;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 720px) {
+  .cover { padding: 140px 24px 60px; }
+  .direction { padding: 56px 24px; }
+  .sample { padding: 36px 28px 32px; }
+  .direction-header { grid-template-columns: 1fr; gap: 12px; }
+  .direction-num { font-size: 42px; }
+  .tocnav { padding: 12px 16px; }
+  .tocnav .jump a { font-size: 9.5px; padding: 6px 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="tocnav">
+  <a href="mindscapes-briefing-for-andrew-cait.html" class="back">← Back to briefing</a>
+  <a href="index.html" class="brand">Mind<strong>Scapes</strong></a>
+  <div class="jump">
+    <a href="#dir-0">00 Current</a>
+    <a href="#dir-1">01 Editorial</a>
+    <a href="#dir-2">02 Modern</a>
+    <a href="#dir-3">03 Heritage</a>
+    <a href="#dir-4">04 Heartland</a>
+  </div>
+</nav>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-content">
+    <div class="eyebrow">For Andrew, Cait, &amp; Steve · A Typography Review</div>
+    <h1>Five directions for the<br>MindScapes <strong>type system.</strong></h1>
+    <div class="subtitle">The current Fraunces + Outfit pairing has gotten honest pushback from both Steve and Cait. Here are four alternative directions plus the current baseline — same content, same colors, different type. Scroll, compare, react.</div>
+
+    <div class="cover-note">
+      <p><strong>HOW TO USE THIS PAGE:</strong> Each direction below shows the same brand content rendered in a different type pairing — a hero, the brand word "Layers.", a section heading, a body paragraph, a proof card, and the italic emphasis pattern. The point is to see them in actual MindScapes content, not lorem ipsum. Reply by email with which direction (or combination) feels right — or what's still off.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ DIRECTION 0 — CURRENT BASELINE ═══════ -->
+<section class="direction dir-current" id="dir-0">
+  <div class="direction-inner">
+    <div class="direction-header">
+      <div class="direction-num">00</div>
+      <div class="direction-meta">
+        <div class="label">Baseline · Current Pairing</div>
+        <h2>Fraunces &amp; Outfit</h2>
+        <p class="stack"><strong>Display:</strong> Fraunces (humanist serif, optical sizing) · <strong>Body:</strong> Outfit (geometric sans, Google Fonts only)</p>
+        <p class="vibe">"Warm artisan." Steve and Cait both flagged it as too soft — Cait specifically said it reminded her of a landscaping brand. Included here as the reference point against which the four alternatives can be judged.</p>
+      </div>
+    </div>
+
+    <div class="sample">
+      <!-- Hero -->
+      <div class="sample-row">
+        <div class="row-label">Homepage Hero</div>
+        <div class="s-eyebrow">The Approach</div>
+        <h1 class="s-h1">Innovation doesn't scale without<br>the <em>layers</em> beneath it.</h1>
+        <p class="s-tagline">MindScapes connects the systems most organizations build in silos — infrastructure, workforce, and AI — into one architecture for digital transformation.</p>
+      </div>
+
+      <!-- Brand word -->
+      <div class="sample-row">
+        <div class="row-label">Brand Word · Section Break</div>
+        <div class="s-section-break">
+          <span class="word">Layers.</span>
+          <span class="punctuation">— one word, with weight.</span>
+        </div>
+      </div>
+
+      <!-- Approach H2 -->
+      <div class="sample-row">
+        <div class="row-label">Approach H2</div>
+        <h2 class="s-h2">Three disciplines. One <em>result.</em></h2>
+      </div>
+
+      <!-- Body paragraph -->
+      <div class="sample-row">
+        <div class="row-label">Body Paragraph</div>
+        <p class="s-body">Most organizations build infrastructure, workforce, and AI in separate rooms. <strong>MindScapes connects them</strong> — turning three parallel investments into one working system. The work happens at the seams — in the layers beneath the headline that <em>most organizations forget to build.</em></p>
+      </div>
+
+      <!-- Proof card -->
+      <div class="sample-row">
+        <div class="row-label">Proof Card</div>
+        <div class="s-card">
+          <div class="card-tag">Infrastructure · 2023–2026</div>
+          <div class="card-title">Kansas's First Carrier-Neutral IXP</div>
+          <p class="card-body">Spent years facilitating the relationships that brought Kansas its first Internet Exchange Point — now a national blueprint for AI-ready interconnection. <strong>The State of Kansas awarded a $5M matching grant.</strong></p>
+        </div>
+      </div>
+
+      <!-- Italic demo -->
+      <div class="sample-row">
+        <div class="row-label">Italic Emphasis Pattern</div>
+        <div class="s-italic-demo">The connector is the <em>highest-leverage role</em> in any system.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ DIRECTION 1 — EDITORIAL AUTHORITY ═══════ -->
+<section class="direction dir-editorial" id="dir-1">
+  <div class="direction-inner">
+    <div class="direction-header">
+      <div class="direction-num">01</div>
+      <div class="direction-meta">
+        <div class="label">Direction 01 · Editorial Authority</div>
+        <h2>Crimson Pro &amp; Inter</h2>
+        <p class="stack"><strong>Display:</strong> Crimson Pro (contemporary classical serif) · <strong>Body:</strong> Inter (gold standard for modern UI typography)</p>
+        <p class="vibe">"The Atlantic. Stripe. The New York Times' redesign." Editorial gravity + clean precision. Serious without being stuffy. The pair signals — we publish thinking, we deliver execution. Both fonts free on Google Fonts. <strong style="color: var(--emerald); font-weight: 600;">Claude's recommended pick.</strong></p>
+      </div>
+    </div>
+
+    <div class="sample">
+      <div class="sample-row">
+        <div class="row-label">Homepage Hero</div>
+        <div class="s-eyebrow">The Approach</div>
+        <h1 class="s-h1">Innovation doesn't scale without<br>the <em>layers</em> beneath it.</h1>
+        <p class="s-tagline">MindScapes connects the systems most organizations build in silos — infrastructure, workforce, and AI — into one architecture for digital transformation.</p>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Brand Word · Section Break</div>
+        <div class="s-section-break">
+          <span class="word">Layers.</span>
+          <span class="punctuation">— one word, with weight.</span>
+        </div>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Approach H2</div>
+        <h2 class="s-h2">Three disciplines. One <em>result.</em></h2>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Body Paragraph</div>
+        <p class="s-body">Most organizations build infrastructure, workforce, and AI in separate rooms. <strong>MindScapes connects them</strong> — turning three parallel investments into one working system. The work happens at the seams — in the layers beneath the headline that <em>most organizations forget to build.</em></p>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Proof Card</div>
+        <div class="s-card">
+          <div class="card-tag">Infrastructure · 2023–2026</div>
+          <div class="card-title">Kansas's First Carrier-Neutral IXP</div>
+          <p class="card-body">Spent years facilitating the relationships that brought Kansas its first Internet Exchange Point — now a national blueprint for AI-ready interconnection. <strong>The State of Kansas awarded a $5M matching grant.</strong></p>
+        </div>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Italic Emphasis Pattern</div>
+        <div class="s-italic-demo">The connector is the <em>highest-leverage role</em> in any system.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ DIRECTION 2 — MODERN OPERATOR ═══════ -->
+<section class="direction dir-modern" id="dir-2">
+  <div class="direction-inner">
+    <div class="direction-header">
+      <div class="direction-num">02</div>
+      <div class="direction-meta">
+        <div class="label">Direction 02 · Modern Operator</div>
+        <h2>Manrope &amp; Inter</h2>
+        <p class="stack"><strong>Display:</strong> Manrope (geometric sans, tightened) · <strong>Body:</strong> Inter (modern UI standard)</p>
+        <p class="vibe">"Anthropic. Linear. Vercel. Arc." Pure geometric sans for both display and body, with contrast through weight rather than typeface. Maximum contemporary confidence. Less editorial warmth — more direct.</p>
+      </div>
+    </div>
+
+    <div class="sample">
+      <div class="sample-row">
+        <div class="row-label">Homepage Hero</div>
+        <div class="s-eyebrow">The Approach</div>
+        <h1 class="s-h1">Innovation doesn't scale without<br>the <em>layers</em> beneath it.</h1>
+        <p class="s-tagline">MindScapes connects the systems most organizations build in silos — infrastructure, workforce, and AI — into one architecture for digital transformation.</p>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Brand Word · Section Break</div>
+        <div class="s-section-break">
+          <span class="word">Layers.</span>
+          <span class="punctuation">— one word, with weight.</span>
+        </div>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Approach H2</div>
+        <h2 class="s-h2">Three disciplines. One <em>result.</em></h2>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Body Paragraph</div>
+        <p class="s-body">Most organizations build infrastructure, workforce, and AI in separate rooms. <strong>MindScapes connects them</strong> — turning three parallel investments into one working system. The work happens at the seams — in the layers beneath the headline that <em>most organizations forget to build.</em></p>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Proof Card</div>
+        <div class="s-card">
+          <div class="card-tag">Infrastructure · 2023–2026</div>
+          <div class="card-title">Kansas's First Carrier-Neutral IXP</div>
+          <p class="card-body">Spent years facilitating the relationships that brought Kansas its first Internet Exchange Point — now a national blueprint for AI-ready interconnection. <strong>The State of Kansas awarded a $5M matching grant.</strong></p>
+        </div>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Italic Emphasis Pattern</div>
+        <div class="s-italic-demo">The connector is the <em>highest-leverage role</em> in any system.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ DIRECTION 3 — HERITAGE ARCHITECT ═══════ -->
+<section class="direction dir-heritage" id="dir-3">
+  <div class="direction-inner">
+    <div class="direction-header">
+      <div class="direction-num">03</div>
+      <div class="direction-meta">
+        <div class="label">Direction 03 · Heritage Architect</div>
+        <h2>Spectral &amp; Manrope</h2>
+        <p class="stack"><strong>Display:</strong> Spectral (contemporary serif designed for screens) · <strong>Body:</strong> Manrope (geometric sans, warm)</p>
+        <p class="vibe">"Cambr. Pentagram. A high-end architecture firm." Sharper than Fraunces, more architectural, less floral. Quietly distinctive. Says "we know what we're doing" without showing off.</p>
+      </div>
+    </div>
+
+    <div class="sample">
+      <div class="sample-row">
+        <div class="row-label">Homepage Hero</div>
+        <div class="s-eyebrow">The Approach</div>
+        <h1 class="s-h1">Innovation doesn't scale without<br>the <em>layers</em> beneath it.</h1>
+        <p class="s-tagline">MindScapes connects the systems most organizations build in silos — infrastructure, workforce, and AI — into one architecture for digital transformation.</p>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Brand Word · Section Break</div>
+        <div class="s-section-break">
+          <span class="word">Layers.</span>
+          <span class="punctuation">— one word, with weight.</span>
+        </div>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Approach H2</div>
+        <h2 class="s-h2">Three disciplines. One <em>result.</em></h2>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Body Paragraph</div>
+        <p class="s-body">Most organizations build infrastructure, workforce, and AI in separate rooms. <strong>MindScapes connects them</strong> — turning three parallel investments into one working system. The work happens at the seams — in the layers beneath the headline that <em>most organizations forget to build.</em></p>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Proof Card</div>
+        <div class="s-card">
+          <div class="card-tag">Infrastructure · 2023–2026</div>
+          <div class="card-title">Kansas's First Carrier-Neutral IXP</div>
+          <p class="card-body">Spent years facilitating the relationships that brought Kansas its first Internet Exchange Point — now a national blueprint for AI-ready interconnection. <strong>The State of Kansas awarded a $5M matching grant.</strong></p>
+        </div>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Italic Emphasis Pattern</div>
+        <div class="s-italic-demo">The connector is the <em>highest-leverage role</em> in any system.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ DIRECTION 4 — HEARTLAND MODERN ═══════ -->
+<section class="direction dir-heartland" id="dir-4">
+  <div class="direction-inner">
+    <div class="direction-header">
+      <div class="direction-num">04</div>
+      <div class="direction-meta">
+        <div class="label">Direction 04 · Heartland Modern</div>
+        <h2>Inter (display &amp; body)</h2>
+        <p class="stack"><strong>Display:</strong> Inter Black/ExtraBold (weight contrast) · <strong>Body:</strong> Inter Regular/Light</p>
+        <p class="vibe">"Patagonia's annual report. Bloomberg Terminal. Bridgewater. Field Notes." All-sans, weight does the work. The most distinctive direction — drops the serif moment entirely. Says: confident, American, unfussy. Pairs cleanly with the heartland positioning.</p>
+      </div>
+    </div>
+
+    <div class="sample">
+      <div class="sample-row">
+        <div class="row-label">Homepage Hero</div>
+        <div class="s-eyebrow">The Approach</div>
+        <h1 class="s-h1">Innovation doesn't scale without<br>the <em>layers</em> beneath it.</h1>
+        <p class="s-tagline">MindScapes connects the systems most organizations build in silos — infrastructure, workforce, and AI — into one architecture for digital transformation.</p>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Brand Word · Section Break</div>
+        <div class="s-section-break">
+          <span class="word">Layers.</span>
+          <span class="punctuation">— one word, with weight.</span>
+        </div>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Approach H2</div>
+        <h2 class="s-h2">Three disciplines. One <em>result.</em></h2>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Body Paragraph</div>
+        <p class="s-body">Most organizations build infrastructure, workforce, and AI in separate rooms. <strong>MindScapes connects them</strong> — turning three parallel investments into one working system. The work happens at the seams — in the layers beneath the headline that <em>most organizations forget to build.</em></p>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Proof Card</div>
+        <div class="s-card">
+          <div class="card-tag">Infrastructure · 2023–2026</div>
+          <div class="card-title">Kansas's First Carrier-Neutral IXP</div>
+          <p class="card-body">Spent years facilitating the relationships that brought Kansas its first Internet Exchange Point — now a national blueprint for AI-ready interconnection. <strong>The State of Kansas awarded a $5M matching grant.</strong></p>
+        </div>
+      </div>
+
+      <div class="sample-row">
+        <div class="row-label">Italic Emphasis Pattern</div>
+        <div class="s-italic-demo">The connector is the <em>highest-leverage role</em> in any system.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wordmark">
+    <span class="mind">Mind</span><span class="scapes">Scapes</span>
+  </div>
+  <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 16px; color: var(--emerald); margin-bottom: 8px;">Connection compounds.</p>
+
+  <div class="response-block">
+    <div class="label">How to Respond</div>
+    <p>Reply by email with the direction you prefer — or what's still off. Pick a winner, propose a hybrid, or suggest something different entirely.</p>
+    <p><a href="mailto:tonya.witherspoon@mindscapes.tech?subject=MindScapes%20type%20review%20%E2%80%94%20my%20take">tonya.witherspoon@mindscapes.tech</a></p>
+  </div>
+
+  <p class="copy">Typography Review · For Andrew, Cait &amp; Steve · MindScapes 2026</p>
+</footer>
+
+</body>
+</html>
