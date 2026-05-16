@@ -13,6 +13,7 @@
 <nav class="topnav">
   <a href="index.html" class="nav-logo">Mind<strong>Scapes</strong></a>
   <div class="nav-links">
+    <a href="services.html">Services</a>
     <a href="work.html">Work</a>
     <a href="leadership.html">Leadership</a>
     <a href="insights.html">Insights</a>
@@ -24,7 +25,7 @@
   <div class="container">
     <div class="eyebrow">Request a Brief</div>
     <h1>Let's <em>connect.</em></h1>
-    <p class="lead">Tell us a bit about what you're building. We'll respond within two business days with next steps for a discovery conversation.</p>
+    <p class="lead">Tell us a bit about what you're working on and which engagement type fits best. We'll respond within two business days with next steps for a discovery conversation. Not sure which engagement is right? <a href="services.html" style="color: var(--emerald);">See the full Services page →</a></p>
   </div>
 </section>
 
@@ -53,23 +54,35 @@
       </div>
 
       <div class="form-row">
-        <label for="interest">What brings you here?</label>
-        <select id="interest" name="interest">
+        <label for="engagement">Which engagement type fits best?</label>
+        <select id="engagement" name="engagement">
           <option value="">— Select one —</option>
-          <option value="ai-workforce">AI-Ready Workforce</option>
-          <option value="infrastructure">Connected Infrastructure</option>
-          <option value="operationalized-innovation">Operationalized Innovation</option>
-          <option value="partnerships">Strategic Partnerships</option>
-          <option value="grants-policy">Grant &amp; Policy Readiness</option>
-          <option value="community">Community-Scale Transformation</option>
-          <option value="speaking">Speaking / Panel Invitation</option>
+          <option value="strategic-briefing">Strategic Briefing (one-time deep dive)</option>
+          <option value="ai-strategy">AI Strategy &amp; Operations</option>
+          <option value="build-launch">Build &amp; Launch (AI software/product work)</option>
+          <option value="architecture">Architecture Engagement (multi-month system build)</option>
+          <option value="advisory-retainer">Advisory Retainer (ongoing relationship)</option>
+          <option value="speaking">Speaking or Workshop</option>
+          <option value="coalition">Coalition Building / Channel Strategy</option>
+          <option value="unsure">Not sure yet — let's talk</option>
           <option value="other">Something else</option>
         </select>
       </div>
 
       <div class="form-row">
+        <label for="timeline">Timeline</label>
+        <select id="timeline" name="timeline">
+          <option value="">— Select one —</option>
+          <option value="urgent">Urgent — within 30 days</option>
+          <option value="quarter">This quarter</option>
+          <option value="half-year">Next 3-6 months</option>
+          <option value="exploring">Exploring — no fixed timeline</option>
+        </select>
+      </div>
+
+      <div class="form-row">
         <label for="message">Tell us about your project</label>
-        <textarea id="message" name="message" rows="6" placeholder="What are you trying to build? What's the timeline? Who else is involved?" required></textarea>
+        <textarea id="message" name="message" rows="6" placeholder="What are you trying to build or solve? What's the context? Who else is involved? Any specifics on scope, audience, or constraints?" required></textarea>
       </div>
 
       <button type="submit" class="form-submit">Send Inquiry</button>
@@ -93,7 +106,8 @@
     <div class="footer-links">
       <div class="footer-col">
         <h5>Explore</h5>
-        <a href="work.html">Work</a>
+        <a href="services.html">Services</a>
+    <a href="work.html">Work</a>
         <a href="leadership.html">Leadership</a>
         <a href="insights.html">Insights</a>
         <a href="inquiry.html">Request a Brief</a>
