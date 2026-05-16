@@ -658,6 +658,61 @@ section.layer { padding: 96px 0; border-top: 1px solid rgba(0,194,122,0.08); }
 }
 
 /* ═══════ SERVICES PAGE ═══════ */
+.audience-strip {
+  padding: 36px 40px 40px;
+  background: linear-gradient(180deg, rgba(0,194,122,0.04), transparent);
+  border-top: 1px solid rgba(0,194,122,0.1);
+  border-bottom: 1px solid rgba(0,194,122,0.06);
+}
+.audience-strip-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 18px;
+  text-align: center;
+  opacity: 0.85;
+}
+.audience-strip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.audience-pill {
+  display: inline-block;
+  padding: 9px 18px;
+  background: var(--panel);
+  border: 1px solid rgba(0,194,122,0.18);
+  border-radius: 50px;
+  font-size: 13.5px;
+  color: var(--mist-l);
+  letter-spacing: 0.01em;
+  transition: all 0.3s ease;
+}
+.audience-pill:hover {
+  border-color: var(--emerald);
+  color: var(--white);
+  background: var(--panel-l);
+}
+.audience-strip-note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 14.5px;
+  color: var(--mist);
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+@media (max-width: 720px) {
+  .audience-strip { padding: 28px 20px 32px; }
+  .audience-pill { font-size: 12.5px; padding: 8px 14px; }
+}
+
+/* Legacy audience-grid removed — kept for any other pages that might reference it */
 .audience-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
