@@ -396,6 +396,99 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* ─── WORDMARK · the potential logo ─── */
+.sample-row-wordmark {
+  background: linear-gradient(180deg, rgba(0,194,122,0.04), transparent);
+  margin: -22px -28px 0;
+  padding: 28px 28px 26px !important;
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid rgba(0,194,122,0.18) !important;
+}
+.sample-row-wordmark .row-label {
+  color: var(--glow);
+  opacity: 0.9;
+}
+.s-wordmark-large {
+  font-size: clamp(56px, 9vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  font-weight: 400;
+  margin-bottom: 26px;
+}
+.s-wordmark-large em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.s-wordmark-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  flex-wrap: wrap;
+  padding: 18px 22px;
+  background: var(--midnight);
+  border-radius: 8px;
+  border: 1px solid rgba(0,194,122,0.08);
+  margin-bottom: 14px;
+}
+.s-wordmark-small {
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--white);
+  font-weight: 400;
+}
+.s-wordmark-small em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.s-wordmark-tiny {
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  font-weight: 400;
+}
+.s-wordmark-tiny em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.s-wordmark-mono {
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--white);
+  font-weight: 400;
+}
+.s-wordmark-mono strong {
+  font-weight: 700;
+  font-style: italic;
+  color: var(--white);
+  /* no gradient — monochrome test */
+}
+.s-wordmark-divider {
+  color: var(--mist);
+  opacity: 0.4;
+  font-size: 18px;
+}
+.s-wordmark-caption {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+  opacity: 0.65;
+}
+
 /* ═══════════════════════════════════════════════════════
    DIRECTION-SPECIFIC FONT FAMILIES
    Each direction scopes its fonts via a wrapper class.
@@ -414,7 +507,11 @@ body {
 .dir-current .sample .s-h2,
 .dir-current .sample .s-section-break .word,
 .dir-current .sample .s-italic-demo,
-.dir-current .sample .s-card .card-title {
+.dir-current .sample .s-card .card-title,
+.dir-current .sample .s-wordmark-large,
+.dir-current .sample .s-wordmark-small,
+.dir-current .sample .s-wordmark-tiny,
+.dir-current .sample .s-wordmark-mono {
   font-family: 'Fraunces', serif;
 }
 .dir-current .sample .s-h1 em,
@@ -432,7 +529,11 @@ body {
 .dir-editorial .sample .s-h2,
 .dir-editorial .sample .s-section-break .word,
 .dir-editorial .sample .s-italic-demo,
-.dir-editorial .sample .s-card .card-title {
+.dir-editorial .sample .s-card .card-title,
+.dir-editorial .sample .s-wordmark-large,
+.dir-editorial .sample .s-wordmark-small,
+.dir-editorial .sample .s-wordmark-tiny,
+.dir-editorial .sample .s-wordmark-mono {
   font-family: 'Crimson Pro', serif;
 }
 .dir-editorial .sample .s-h1 em,
@@ -450,7 +551,11 @@ body {
 .dir-modern .sample .s-h2,
 .dir-modern .sample .s-section-break .word,
 .dir-modern .sample .s-italic-demo,
-.dir-modern .sample .s-card .card-title {
+.dir-modern .sample .s-card .card-title,
+.dir-modern .sample .s-wordmark-large,
+.dir-modern .sample .s-wordmark-small,
+.dir-modern .sample .s-wordmark-tiny,
+.dir-modern .sample .s-wordmark-mono {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
   letter-spacing: -0.025em;
@@ -472,7 +577,11 @@ body {
 .dir-heritage .sample .s-h2,
 .dir-heritage .sample .s-section-break .word,
 .dir-heritage .sample .s-italic-demo,
-.dir-heritage .sample .s-card .card-title {
+.dir-heritage .sample .s-card .card-title,
+.dir-heritage .sample .s-wordmark-large,
+.dir-heritage .sample .s-wordmark-small,
+.dir-heritage .sample .s-wordmark-tiny,
+.dir-heritage .sample .s-wordmark-mono {
   font-family: 'Spectral', serif;
   font-weight: 600;
 }
@@ -493,7 +602,11 @@ body {
 .dir-heartland .sample .s-h2,
 .dir-heartland .sample .s-section-break .word,
 .dir-heartland .sample .s-italic-demo,
-.dir-heartland .sample .s-card .card-title {
+.dir-heartland .sample .s-card .card-title,
+.dir-heartland .sample .s-wordmark-large,
+.dir-heartland .sample .s-wordmark-small,
+.dir-heartland .sample .s-wordmark-tiny,
+.dir-heartland .sample .s-wordmark-mono {
   font-family: 'Inter', sans-serif;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -599,10 +712,10 @@ footer .copy {
   <div class="cover-content">
     <div class="eyebrow">For Andrew, Cait, &amp; Steve · A Typography Review</div>
     <h1>Five directions for the<br>MindScapes <strong>type system.</strong></h1>
-    <div class="subtitle">The current Fraunces + Outfit pairing has gotten honest pushback from both Steve and Cait. Here are four alternative directions plus the current baseline — same content, same colors, different type. Scroll, compare, react.</div>
+    <div class="subtitle">The current Fraunces + Outfit pairing has gotten honest pushback from both Steve and Cait. Here are four alternative directions plus the current baseline — same content, same colors, different type. <strong style="color: var(--white); font-weight: 500;">The most important moment in each direction is the wordmark itself — since "MindScapes" may end up being the logo.</strong> Scroll, compare, react.</div>
 
     <div class="cover-note">
-      <p><strong>HOW TO USE THIS PAGE:</strong> Each direction below shows the same brand content rendered in a different type pairing — a hero, the brand word "Layers.", a section heading, a body paragraph, a proof card, and the italic emphasis pattern. The point is to see them in actual MindScapes content, not lorem ipsum. Reply by email with which direction (or combination) feels right — or what's still off.</p>
+      <p><strong>HOW TO USE THIS PAGE:</strong> Each direction below shows the same brand content rendered in a different type pairing. <strong style="color: #FFD988; font-weight: 500; font-style: normal; letter-spacing: 0;">Start with the wordmark at the top of each direction — that's the potential logo.</strong> Then read down through the supporting moments: hero, brand word "Layers.", section heading, body paragraph, proof card, and italic emphasis. The point is to see them in actual MindScapes content, not lorem ipsum. Reply by email with which direction (or combination) feels right — or what's still off.</p>
     </div>
   </div>
 </section>
@@ -621,7 +734,20 @@ footer .copy {
     </div>
 
     <div class="sample">
-      <!-- Hero -->
+                  <!-- Wordmark -->
+      <div class="sample-row sample-row-wordmark">
+        <div class="row-label">★ The Wordmark · Potential Logo</div>
+        <div class="s-wordmark-large">Mind<em>Scapes</em></div>
+        <div class="s-wordmark-meta">
+          <div class="s-wordmark-small">Mind<em>Scapes</em></div>
+          <span class="s-wordmark-divider">·</span>
+          <div class="s-wordmark-tiny">Mind<em>Scapes</em></div>
+          <span class="s-wordmark-divider">·</span>
+          <div class="s-wordmark-mono">Mind<strong>Scapes</strong></div>
+        </div>
+        <div class="s-wordmark-caption">Hero size · Nav size · Footer size · Monochrome (no gradient)</div>
+      </div>
+
       <div class="sample-row">
         <div class="row-label">Homepage Hero</div>
         <div class="s-eyebrow">The Approach</div>
@@ -683,6 +809,20 @@ footer .copy {
     </div>
 
     <div class="sample">
+            <!-- Wordmark -->
+      <div class="sample-row sample-row-wordmark">
+        <div class="row-label">★ The Wordmark · Potential Logo</div>
+        <div class="s-wordmark-large">Mind<em>Scapes</em></div>
+        <div class="s-wordmark-meta">
+          <div class="s-wordmark-small">Mind<em>Scapes</em></div>
+          <span class="s-wordmark-divider">·</span>
+          <div class="s-wordmark-tiny">Mind<em>Scapes</em></div>
+          <span class="s-wordmark-divider">·</span>
+          <div class="s-wordmark-mono">Mind<strong>Scapes</strong></div>
+        </div>
+        <div class="s-wordmark-caption">Hero size · Nav size · Footer size · Monochrome (no gradient)</div>
+      </div>
+
       <div class="sample-row">
         <div class="row-label">Homepage Hero</div>
         <div class="s-eyebrow">The Approach</div>
@@ -739,6 +879,20 @@ footer .copy {
     </div>
 
     <div class="sample">
+            <!-- Wordmark -->
+      <div class="sample-row sample-row-wordmark">
+        <div class="row-label">★ The Wordmark · Potential Logo</div>
+        <div class="s-wordmark-large">Mind<em>Scapes</em></div>
+        <div class="s-wordmark-meta">
+          <div class="s-wordmark-small">Mind<em>Scapes</em></div>
+          <span class="s-wordmark-divider">·</span>
+          <div class="s-wordmark-tiny">Mind<em>Scapes</em></div>
+          <span class="s-wordmark-divider">·</span>
+          <div class="s-wordmark-mono">Mind<strong>Scapes</strong></div>
+        </div>
+        <div class="s-wordmark-caption">Hero size · Nav size · Footer size · Monochrome (no gradient)</div>
+      </div>
+
       <div class="sample-row">
         <div class="row-label">Homepage Hero</div>
         <div class="s-eyebrow">The Approach</div>
@@ -795,6 +949,20 @@ footer .copy {
     </div>
 
     <div class="sample">
+            <!-- Wordmark -->
+      <div class="sample-row sample-row-wordmark">
+        <div class="row-label">★ The Wordmark · Potential Logo</div>
+        <div class="s-wordmark-large">Mind<em>Scapes</em></div>
+        <div class="s-wordmark-meta">
+          <div class="s-wordmark-small">Mind<em>Scapes</em></div>
+          <span class="s-wordmark-divider">·</span>
+          <div class="s-wordmark-tiny">Mind<em>Scapes</em></div>
+          <span class="s-wordmark-divider">·</span>
+          <div class="s-wordmark-mono">Mind<strong>Scapes</strong></div>
+        </div>
+        <div class="s-wordmark-caption">Hero size · Nav size · Footer size · Monochrome (no gradient)</div>
+      </div>
+
       <div class="sample-row">
         <div class="row-label">Homepage Hero</div>
         <div class="s-eyebrow">The Approach</div>
@@ -851,6 +1019,20 @@ footer .copy {
     </div>
 
     <div class="sample">
+            <!-- Wordmark -->
+      <div class="sample-row sample-row-wordmark">
+        <div class="row-label">★ The Wordmark · Potential Logo</div>
+        <div class="s-wordmark-large">Mind<em>Scapes</em></div>
+        <div class="s-wordmark-meta">
+          <div class="s-wordmark-small">Mind<em>Scapes</em></div>
+          <span class="s-wordmark-divider">·</span>
+          <div class="s-wordmark-tiny">Mind<em>Scapes</em></div>
+          <span class="s-wordmark-divider">·</span>
+          <div class="s-wordmark-mono">Mind<strong>Scapes</strong></div>
+        </div>
+        <div class="s-wordmark-caption">Hero size · Nav size · Footer size · Monochrome (no gradient)</div>
+      </div>
+
       <div class="sample-row">
         <div class="row-label">Homepage Hero</div>
         <div class="s-eyebrow">The Approach</div>

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MindScapes — Language Toolkit</title>
+<meta name="description" content="The rich brand language saved for keynotes, LinkedIn, talks, and insider materials — with context, examples, and how-to-use prompts." />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,700;1,9..144,800&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --emerald: #00C27A;
+  --emerald-d: #00956E;
+  --cyan: #00E5FF;
+  --cyan-d: #00B8CC;
+  --glow: #00FF9D;
+  --midnight: #050F1A;
+  --dark: #071826;
+  --panel: #0A2030;
+  --panel-l: #0E2538;
+  --steel: #0D2B3E;
+  --mist: #8FAFC0;
+  --mist-l: #B0CDD9;
+  --white: #F2FAF7;
+  --max-w: 960px;
+  --gutter: 40px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--midnight);
+  color: var(--white);
+  font-family: 'Outfit', 'Aptos', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* COVER */
+.cover {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px var(--gutter) 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(0,194,122,0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(0,229,255,0.07) 0%, transparent 50%);
+}
+.cover-content { max-width: var(--max-w); margin: 0 auto; position: relative; z-index: 1; width: 100%; }
+.cover .eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 28px;
+}
+.cover h1 {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-weight: 300;
+  font-size: clamp(40px, 7vw, 84px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.cover h1 strong {
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cover .subtitle {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(20px, 2.5vw, 26px);
+  color: var(--mist-l);
+  line-height: 1.5;
+  margin-bottom: 48px;
+  max-width: 660px;
+}
+.cover-note {
+  padding: 28px 32px;
+  background: rgba(244, 228, 188, 0.05);
+  border-left: 3px solid #E6D29A;
+  border-radius: 0 12px 12px 0;
+  max-width: 720px;
+}
+.cover-note p {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--white);
+  margin: 0;
+}
+.cover-note p strong { color: #FFD988; font-weight: 500; }
+
+/* SECTION */
+.chapter { padding: 96px 0; border-top: 1px solid rgba(0,194,122,0.08); }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+.chapter-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 18px;
+}
+.chapter-title {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-weight: 600;
+  font-size: clamp(30px, 4.5vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.chapter-title em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.intro {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--mist-l);
+  line-height: 1.6;
+  margin-bottom: 48px;
+  max-width: 720px;
+}
+
+h3 {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--white);
+  margin: 48px 0 16px;
+  letter-spacing: -0.01em;
+}
+p {
+  color: var(--mist-l);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+p strong { color: var(--white); font-weight: 500; }
+p em { color: var(--white); }
+
+/* PHRASE CARD */
+.phrase-card {
+  background: var(--panel);
+  border: 1px solid rgba(0,194,122,0.12);
+  border-radius: 16px;
+  padding: 36px 38px;
+  margin: 24px 0 32px;
+}
+.phrase-card .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+.phrase-card .phrase {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-weight: 600;
+  font-size: clamp(24px, 3.5vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.phrase-card .phrase em {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.phrase-card .what-it-means {
+  border-top: 1px solid rgba(0,194,122,0.1);
+  padding-top: 20px;
+}
+.phrase-card .meta-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--cyan-d);
+  opacity: 0.85;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+.phrase-card p {
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.phrase-card ul {
+  list-style: none;
+  margin: 8px 0;
+}
+.phrase-card ul li {
+  padding: 6px 0 6px 22px;
+  position: relative;
+  font-size: 14px;
+  color: var(--mist-l);
+  line-height: 1.7;
+}
+.phrase-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 12px;
+  height: 1px;
+  background: var(--emerald);
+}
+
+/* LINKEDIN EXAMPLES */
+.linkedin-post {
+  background: var(--panel-l);
+  border: 1px solid rgba(0,194,122,0.12);
+  border-radius: 14px;
+  padding: 30px 32px;
+  margin: 20px 0;
+  position: relative;
+}
+.linkedin-post .post-tag {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  opacity: 0.7;
+}
+.linkedin-post .post-topic {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 14px;
+  padding-right: 100px;
+}
+.linkedin-post .post-body {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  color: var(--mist-l);
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+.linkedin-post .post-body strong { color: var(--white); font-weight: 500; }
+.linkedin-post .post-body em { color: var(--emerald); font-style: italic; }
+
+/* STARTER KIT */
+.starter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+.starter-card {
+  background: var(--panel);
+  border: 1px solid rgba(0,194,122,0.1);
+  border-radius: 12px;
+  padding: 22px 24px;
+}
+.starter-card .topic {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 10px;
+}
+.starter-card .opener {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--white);
+  line-height: 1.55;
+}
+
+/* TABLE */
+.where-table {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,194,122,0.12);
+  margin: 24px 0;
+}
+.where-row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  border-bottom: 1px solid rgba(0,194,122,0.08);
+}
+.where-row:last-child { border-bottom: none; }
+.where-row > div {
+  padding: 18px 22px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.where-row.header > div {
+  background: rgba(0,194,122,0.08);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  padding: 14px 22px;
+}
+.where-row .context {
+  background: rgba(0,194,122,0.04);
+  border-right: 1px solid rgba(0,194,122,0.08);
+  color: var(--white);
+  font-weight: 400;
+}
+.where-row .usage { color: var(--mist-l); }
+
+/* CLOSE */
+.close-section {
+  background: var(--dark);
+  padding: 80px 40px;
+  text-align: center;
+  border-top: 1px solid rgba(0,194,122,0.1);
+}
+.close-section .wordmark {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-size: 44px;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.close-section .wordmark .mind { font-weight: 300; color: var(--white); }
+.close-section .wordmark .scapes {
+  font-weight: 700;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--emerald), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.close-section .brand-line {
+  font-family: 'Fraunces', 'Georgia', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--emerald);
+  margin-bottom: 36px;
+}
+.close-section .copy {
+  font-size: 12px;
+  color: var(--mist);
+  opacity: 0.55;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 720px) {
+  .where-row { grid-template-columns: 1fr; }
+  .where-row .context { border-right: none; border-bottom: 1px solid rgba(0,194,122,0.08); }
+  .where-row.header { display: none; }
+  .starter-grid { grid-template-columns: 1fr; }
+  .phrase-card { padding: 28px 24px; }
+  .linkedin-post .post-tag { position: static; display: inline-block; margin-bottom: 12px; }
+  .linkedin-post .post-topic { padding-right: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ COVER ═══════ -->
+<section class="cover">
+  <div class="cover-content">
+    <div class="eyebrow">The Language Toolkit · Companion to the Brand Guide</div>
+    <h1>The rich language,<br>saved for <strong>where it lands.</strong></h1>
+    <div class="subtitle">A working library of the brand's deepest phrases — pulled out of the cold-web context where they fall flat, and kept here for the keynote, the LinkedIn post, the closing slide, and the moments when audiences have time to lean in.</div>
+
+    <div class="cover-note">
+      <p><strong>Why this exists:</strong> The MindScapes brand has two registers — a plain register for cold first impressions, and a rich register for audiences who have context. The website now lives in the plain register. This toolkit holds the rich register: every phrase, metaphor, and frame we built that's too sophisticated for a stranger's three-second scroll — but exactly right for a room that's listening.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 01 · THE TWO REGISTERS ═══════ -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-num">01 · The Two Registers</div>
+    <h2 class="chapter-title">When to use which <em>voice.</em></h2>
+    <p class="intro">The brand has two parallel languages. Both are correct. The trick is using the right one at the right time.</p>
+
+    <div class="where-table">
+      <div class="where-row header">
+        <div>Context</div>
+        <div>Use which register?</div>
+      </div>
+      <div class="where-row">
+        <div class="context">Cold first impression<br><span style="color: var(--mist); font-size: 12px; font-weight: 300;">Stranger sees you for the first time</span></div>
+        <div class="usage"><strong style="color: var(--white);">Plain register.</strong> Use the website voice. Lead with: <em>"Innovation doesn't scale without the layers beneath it."</em> Or the full positioning sentence. No math, no plurality flourishes, no Connection compounds.</div>
+      </div>
+      <div class="where-row">
+        <div class="context">Warm audience<br><span style="color: var(--mist); font-size: 12px; font-weight: 300;">They know your work or have been introduced</span></div>
+        <div class="usage"><strong style="color: var(--white);">Mixed register.</strong> You can use Connection compounds, the plurality of MindScapes, "Layers." as a section break. Save 2+2=9 unless you have time to explain it.</div>
+      </div>
+      <div class="where-row">
+        <div class="context">Keynote or talk<br><span style="color: var(--mist); font-size: 12px; font-weight: 300;">You have 20+ minutes</span></div>
+        <div class="usage"><strong style="color: var(--white);">Full rich register.</strong> 2+2=9 with the "even, even, odd" reveal. The emergence framing. The full thesis. This is where the rich language earns its keep.</div>
+      </div>
+      <div class="where-row">
+        <div class="context">Insider materials<br><span style="color: var(--mist); font-size: 12px; font-weight: 300;">Email signature, footer, signoff, mug</span></div>
+        <div class="usage"><strong style="color: var(--white);">Brand-line register.</strong> Connection compounds. Layers. The signature flourishes that signal membership.</div>
+      </div>
+      <div class="where-row">
+        <div class="context">Written long-form<br><span style="color: var(--mist); font-size: 12px; font-weight: 300;">Op-ed, LinkedIn essay, white paper</span></div>
+        <div class="usage"><strong style="color: var(--white);">Full rich register, in writing.</strong> Build to the moment. Lead with plain language, then reveal the depth as the reader earns it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 02 · THE PHRASES ═══════ -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-num">02 · The Rich Phrases</div>
+    <h2 class="chapter-title">Every line we built — and <em>where it lives.</em></h2>
+    <p class="intro">Each phrase here has a purpose, a context, and a memory. They came out of real conversations about what MindScapes actually is. Use them when the moment calls for them.</p>
+
+    <!-- PHRASE 1: 2+2=9 -->
+    <div class="phrase-card">
+      <div class="label">The Operating Principle</div>
+      <div class="phrase">2 + 2 = <em>9</em></div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> Not 2+2=5, the consultant's shorthand for synergy. 2+2=9. <em>Even, even, odd.</em> Addition AND multiplication, plus one for the emergence no one saw coming.</p>
+        <p><strong>Why it matters:</strong> The brand's central claim is that connection isn't additive — it's compounding. Most consulting firms talk about synergy as if 2+2=5. MindScapes argues that real systems integration produces emergence that even multiplication can't fully predict. The math is intentionally wrong by elementary arithmetic and exactly right by the math of emergent systems.</p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>You're speaking on a stage and have time for the reveal — set up the math, pause, deliver "even, even, odd"</li>
+        <li>You're explaining the brand thesis to a sophisticated audience that will appreciate the precision</li>
+        <li>You're inside an essay or op-ed where you can build to it as a punchline</li>
+      </ul>
+      <div class="meta-label">Do NOT use it when</div>
+      <ul>
+        <li>Cold website headline — readers won't have time to investigate</li>
+        <li>Social media graphic without explanation — too easily misread as a mistake</li>
+        <li>Conference banner where strangers will see only the math</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 2: Connection compounds -->
+    <div class="phrase-card">
+      <div class="label">The Brand Line</div>
+      <div class="phrase">Connection <em>compounds.</em></div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> A two-word truth claim about how value is created in MindScapes' world. Connection isn't addition. It's compounding — like compound interest, like emergent systems, like the way a network's value grows with every node added.</p>
+        <p><strong>Why it matters:</strong> This is the brand's most quotable line. Two words. Mug-able. T-shirt-able. The kind of line that someone who already understands the brand will repeat unprompted. It's calibrated to insiders — people who get it without needing it explained.</p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>Footer of any document, email signature, signoff line</li>
+        <li>The last slide of a keynote (after you've made the case)</li>
+        <li>Merch, hats, mugs, anything where insiders will encounter it</li>
+        <li>Closing line of a proposal, after the explanation is done</li>
+      </ul>
+      <div class="meta-label">Do NOT use it when</div>
+      <ul>
+        <li>Cold first-impression headlines — strangers will read "compounds" as chemical compounds</li>
+        <li>Conference booth banners aimed at people walking by</li>
+        <li>Anywhere it would appear without context surrounding it</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 3: Layers. -->
+    <div class="phrase-card">
+      <div class="label">The Brand Word</div>
+      <div class="phrase"><em>Layers.</em></div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> One word, with a period. A punctuation mark of a thesis. MindScapes is the firm that sees the layers — infrastructure, workforce, AI — and connects them.</p>
+        <p><strong>Why it matters:</strong> The most ownable single word in the brand universe. Nobody else in the consulting space uses "layers" as their core concept. Used alone, it's intriguing rather than explanatory — it invites the reader to ask <em>what layers?</em></p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>Keynote opening slide — one word, a pause, then the explanation</li>
+        <li>Chapter or section breaks in long-form writing</li>
+        <li>T-shirts, hats, swag for people inside the brand</li>
+        <li>Social media graphic where you can pair the word with imagery</li>
+        <li>The title of a talk: "Layers: Why Innovation Doesn't Scale Without Them"</li>
+      </ul>
+      <div class="meta-label">Do NOT use it when</div>
+      <ul>
+        <li>As a tagline beneath the logo on cold-impression materials</li>
+        <li>As the opening line of a cold email or pitch</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 4: Innovation doesn't scale -->
+    <div class="phrase-card">
+      <div class="label">The Hero Headline</div>
+      <div class="phrase">Innovation doesn't scale<br>without the <em>layers</em> beneath it.</div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> A negative-framed truth claim about why most innovation efforts fail. Names the problem (scaling innovation) and the cause (missing foundations) in nine words.</p>
+        <p><strong>Why it matters:</strong> This is the brand's universal opener. It works on cold readers <em>and</em> warm ones. It signals what MindScapes is about without requiring any context to decode. <strong>This is the line that should lead almost every cold first impression — it's already doing that on the homepage.</strong></p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>Homepage hero (already there)</li>
+        <li>Deck opening slide</li>
+        <li>LinkedIn header image or banner</li>
+        <li>Conference banner and booth signage</li>
+        <li>Email signature (above your name)</li>
+        <li>Cold pitch emails, subject lines</li>
+      </ul>
+      <div class="meta-label">Strong because</div>
+      <ul>
+        <li>Self-explanatory in 9 words</li>
+        <li>Names a real problem the audience cares about</li>
+        <li>Universally legible to cold readers</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 5: Innovation is a systems problem -->
+    <div class="phrase-card">
+      <div class="label">The Worldview Line</div>
+      <div class="phrase">Innovation is a <em>systems problem</em>,<br>not a technology problem.</div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> The reframe MindScapes argues for. The technology investments most organizations make don't deliver because the surrounding system — workforce, infrastructure, partnerships — isn't built to absorb them.</p>
+        <p><strong>Why it matters:</strong> This is the line that explains why MindScapes exists. It's diagnostic. It tells the audience what kind of problem they're actually solving (which is rarely the one they think they're solving).</p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>Opening a talk on transformation, AI adoption, or workforce</li>
+        <li>An op-ed thesis line</li>
+        <li>LinkedIn post intro</li>
+        <li>White paper opening</li>
+        <li>Diagnostic conversations with clients who think they need a technology vendor</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 6: The connector -->
+    <div class="phrase-card">
+      <div class="label">The Role Definition</div>
+      <div class="phrase">The connector is the <em>highest-leverage role</em><br>in any system.</div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> Not the inventor. Not the operator. <em>The connector.</em> The person who can see across layers and bring the right people to each one. That role creates the conditions for emergence.</p>
+        <p><strong>Why it matters:</strong> It's how Tonya describes what she actually does. It reframes "consulting" away from advice and toward connective tissue. It's also a quiet challenge to the founder-as-hero narrative most tech brands rely on.</p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>Describing your own role to a new audience</li>
+        <li>Speaker bio openings</li>
+        <li>LinkedIn About section</li>
+        <li>An op-ed about the changing nature of leadership</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 7: Visionary in the specific -->
+    <div class="phrase-card">
+      <div class="label">The Proof Frame</div>
+      <div class="phrase">Visionary in the <em>specific</em>,<br>not the abstract.</div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> MindScapes doesn't talk about the future in vague terms. Every claim is grounded in a specific outcome: a $5M IXP, 350,000 COVID tests in 90 days, $33M in student wages, WSU's #1 aerospace ranking. The vision is real because the receipts are.</p>
+        <p><strong>Why it matters:</strong> It's the line that separates Tonya from every other thought leader at the panel. Many people are visionary in theory. Few are visionary in delivery. This phrase claims that distinction.</p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>Bio openings — especially press / panel intros</li>
+        <li>The opening of a track-record narrative</li>
+        <li>When pushing back on a competitor who's all theory</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 8: Technology arrived faster -->
+    <div class="phrase-card">
+      <div class="label">The Diagnostic</div>
+      <div class="phrase">Technology arrived faster than<br>the <em>systems that could absorb it.</em></div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> Tonya's thirty-year diagnosis of why digital transformation fails. AI, broadband, cloud — every wave arrived faster than the workforce, the partnerships, the institutional capacity required to put it to use.</p>
+        <p><strong>Why it matters:</strong> This is the line that earns the listener's trust. It names something they already feel. Once they nod at this, they're ready to hear about the layers, the connector, the architecture.</p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>Mid-talk, after you've made the case for the systems problem</li>
+        <li>Op-ed body paragraphs</li>
+        <li>Long-form LinkedIn posts</li>
+        <li>Diagnostic moments with new clients</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 9: Connection is technology -->
+    <div class="phrase-card">
+      <div class="label">The Power Line</div>
+      <div class="phrase">Connection is the <em>technology</em><br>that creates leverage.</div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> Reframes "technology" away from tools and toward the human work of connection. The most powerful technology in any organization isn't software. It's the architecture of relationships that makes everything else work.</p>
+        <p><strong>Why it matters:</strong> It's an audacious reframe. It implies that what MindScapes does — connecting layers, partnerships, people — is itself a technology. And the highest-leverage one available.</p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>Closing of a talk — drop the mic moment</li>
+        <li>The last paragraph of a proposal</li>
+        <li>LinkedIn post finale</li>
+        <li>Stage-side conversations with skeptics</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 10: The layers have a name -->
+    <div class="phrase-card">
+      <div class="label">The Brand Closer</div>
+      <div class="phrase">Innovation doesn't scale without the layers beneath it. <em>The layers have a name. They have always had a name. The name is MindScapes.</em></div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> The brand origin story's closing line, used as a rhetorical close. The repetition ("have a name... have always had a name") creates the feeling of inheritance and inevitability.</p>
+        <p><strong>Why it matters:</strong> This is the line that lands the name as the punchline of the brand. It works because it claims something audacious — that MindScapes isn't just a firm but a category. Used sparingly, it's devastating. Overused, it loses power.</p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>The closing slide of a major keynote — the brand reveal moment</li>
+        <li>The final paragraph of the published origin story</li>
+        <li>An anniversary or relaunch announcement</li>
+      </ul>
+      <div class="meta-label">Use sparingly</div>
+      <ul>
+        <li>This is a once-per-talk, once-per-essay line. Repetition kills it.</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 11: Built across layers -->
+    <div class="phrase-card">
+      <div class="label">The Quiet Flex</div>
+      <div class="phrase">Built <em>across layers.</em></div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> A casual past-participle that implies the work is already done. MindScapes isn't promising integration — it's been delivering it for thirty years.</p>
+        <p><strong>Why it matters:</strong> Three words. Mug-able. The implied confidence of "built" (past tense) is more powerful than "we build" (present, promising). Quietly devastating to firms still selling roadmaps.</p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>Tagline beneath a project case study</li>
+        <li>Hat embroidery</li>
+        <li>Email signature alternate to "Connection compounds."</li>
+        <li>Section header in a portfolio</li>
+      </ul>
+    </div>
+
+    <!-- PHRASE 12: We don't replace your team -->
+    <div class="phrase-card">
+      <div class="label">The Positioning Differentiator</div>
+      <div class="phrase">We don't replace your team.<br>We <em>connect them.</em></div>
+      <div class="what-it-means">
+        <p><strong>What it means:</strong> The anti-consulting line. Most consulting firms position themselves as the smart outsider who'll fix things. MindScapes positions itself as the connective tissue that lets your existing team do their best work.</p>
+        <p><strong>Why it matters:</strong> It's a competitive differentiator. It's also a permission structure — it gives the prospect's internal team something to want from MindScapes rather than something to defend against.</p>
+      </div>
+      <div class="meta-label">Use it when</div>
+      <ul>
+        <li>Sales conversations where the buyer is anxious about overhead consulting</li>
+        <li>RFP responses</li>
+        <li>The "how we work" section of a proposal</li>
+        <li>Pitch deck slide for the "what makes us different" moment</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════ 03 · LINKEDIN EXAMPLES ═══════ -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-num">03 · LinkedIn Examples</div>
+    <h2 class="chapter-title">Five full posts, in <em>your voice.</em></h2>
+    <p class="intro">Drafted in the MindScapes voice — sharp, specific, no consultant filler. Copy and adapt. Each one builds toward a moment where the rich language earns its place.</p>
+
+    <!-- POST 1: The math, in long form -->
+    <div class="linkedin-post">
+      <div class="post-tag">~150 words</div>
+      <div class="post-topic">Topic · The math behind MindScapes</div>
+      <div class="post-body">Most consultants will tell you that synergy means 2+2=5.
+
+I think they're underselling it.
+
+In thirty years of building integrated systems — infrastructure, workforce, AI — I've watched what happens when you connect layers that were designed to live separately. It isn't 2+2=5. It's 2+2=9.
+
+<strong>Even, even, odd.</strong> Addition and multiplication, plus one for the emergence no one saw coming.
+
+It's why the WSU Innovation Campus partnered with 700+ employers instead of 100. It's why the MDL stood up in 90 days instead of nine months. It's why Kansas's first IXP became a national blueprint instead of a regional facility.
+
+Connection isn't additive. It's <em>compounding.</em>
+
+Which is why MindScapes exists. To do the math most firms don't believe in.
+
+#DigitalTransformation #Infrastructure #Workforce</div>
+    </div>
+
+    <!-- POST 2: Innovation as systems problem -->
+    <div class="linkedin-post">
+      <div class="post-tag">~120 words</div>
+      <div class="post-topic">Topic · Why innovation initiatives fail</div>
+      <div class="post-body">Innovation is a <strong>systems problem</strong>, not a technology problem.
+
+I've seen this for thirty years. Every wave — broadband, cloud, mobile, AI — arrived faster than the workforce, the partnerships, and the institutional capacity required to absorb it.
+
+The technology gets bought.
+The pilot succeeds.
+The deployment stalls.
+
+<strong>Why?</strong> Because the layer beneath it — the workforce, the infrastructure, the cross-sector relationships — was never built to support what was just installed.
+
+The fix isn't a better vendor. The fix is connection. Across layers. Across silos. Across the rooms most organizations build their strategies in separately.
+
+That's the entire MindScapes thesis. And the entire reason I'm not selling AI. I'm selling the architecture that makes AI useful.
+
+#AIStrategy #SystemsThinking</div>
+    </div>
+
+    <!-- POST 3: The connector role -->
+    <div class="linkedin-post">
+      <div class="post-tag">~90 words</div>
+      <div class="post-topic">Topic · The role MindScapes plays</div>
+      <div class="post-body">After thirty years of this work, I've come to believe something heretical for a consulting founder:
+
+<strong>The connector is the highest-leverage role in any system.</strong>
+
+Not the inventor.
+Not the operator.
+The person who can see across layers and bring the right people to each one.
+
+It's quieter than "founder." It's less heroic than "CEO." But it's where the math changes — where 2+2 stops equaling 4 and starts compounding into something neither side could build alone.
+
+That's the role MindScapes plays. Always has, even when it didn't have a name.
+
+#Leadership #Connectors</div>
+    </div>
+
+    <!-- POST 4: Heartland origin -->
+    <div class="linkedin-post">
+      <div class="post-tag">~140 words</div>
+      <div class="post-topic">Topic · Built in the heartland</div>
+      <div class="post-body">When people ask why MindScapes is headquartered in Wichita, I usually start with the proof of concept.
+
+Wichita sits at the center of a region that:
+— Manufactures aircraft for the world
+— Grows the food supply for several countries
+— Trains the skilled workforce that keeps American industry running
+— Is now building the fiber and data center infrastructure that will power the next economy
+
+If you can build integrated infrastructure-to-AI systems in the middle of America, you can build them anywhere.
+
+That's not regional pride. That's a thesis.
+
+The future of American innovation is being built in the middle of the country. The Rockefeller Foundation knows it. Heartland Forward knows it. And MindScapes was built to operationalize it.
+
+National reach. Heartland address.
+
+#Heartland #Innovation #Wichita</div>
+    </div>
+
+    <!-- POST 5: The brand reveal post -->
+    <div class="linkedin-post">
+      <div class="post-tag">~110 words · Brand launch post</div>
+      <div class="post-topic">Topic · Introducing the rebrand</div>
+      <div class="post-body">After thirty years of building integrated systems from inside institutions — universities, Fortune 50s, public-private partnerships — I've relaunched the firm I first founded in 2007.
+
+Same name. Same mission. Larger scope.
+
+<strong>MindScapes</strong> exists for one reason: most organizations build their infrastructure strategy, their workforce strategy, and their AI strategy in three separate rooms. Almost nobody is in all three rooms at once.
+
+I am. I have been. And now MindScapes is the vehicle for that work — operationalized, scaled, and brought to the firms that need it most.
+
+Innovation doesn't scale without the layers beneath it.
+
+The layers have a name. They've always had a name.
+
+<em>Connection compounds.</em>
+
+#NewChapter #MindScapes</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════ 04 · STARTER KIT ═══════ -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-num">04 · The Starter Kit</div>
+    <h2 class="chapter-title">Openers, prompts, and <em>conversation hooks.</em></h2>
+    <p class="intro">When you don't have time to write a full post, start with one of these. Each is a doorway into the rich language without committing to a full essay.</p>
+
+    <h3>Openers for LinkedIn posts</h3>
+    <div class="starter-grid">
+      <div class="starter-card">
+        <div class="topic">Reframe Opener</div>
+        <div class="opener">"After thirty years of this work, I've come to believe something heretical..."</div>
+      </div>
+      <div class="starter-card">
+        <div class="topic">Diagnostic Opener</div>
+        <div class="opener">"Every wave I've watched roll through arrived faster than the systems that could absorb it..."</div>
+      </div>
+      <div class="starter-card">
+        <div class="topic">Math Opener</div>
+        <div class="opener">"Most consultants say synergy means 2+2=5. I think they're underselling it..."</div>
+      </div>
+      <div class="starter-card">
+        <div class="topic">Layer Opener</div>
+        <div class="opener">"There's a layer most organizations forget to build. It's the reason their AI strategy isn't working..."</div>
+      </div>
+      <div class="starter-card">
+        <div class="topic">Heartland Opener</div>
+        <div class="opener">"People ask why MindScapes is headquartered in Wichita. The short answer: it's a proof of concept."</div>
+      </div>
+      <div class="starter-card">
+        <div class="topic">Receipt Opener</div>
+        <div class="opener">"The MDL stood up in 90 days. The IXP became a national blueprint. The Innovation Campus reached 700+ employers. Here's the pattern…"</div>
+      </div>
+    </div>
+
+    <h3>Closers (use one to end a post or essay)</h3>
+    <div class="starter-grid">
+      <div class="starter-card">
+        <div class="topic">The Brand Line</div>
+        <div class="opener">"Connection compounds."</div>
+      </div>
+      <div class="starter-card">
+        <div class="topic">The Reveal</div>
+        <div class="opener">"The layers have a name. They've always had a name. The name is MindScapes."</div>
+      </div>
+      <div class="starter-card">
+        <div class="topic">The Reframe</div>
+        <div class="opener">"Connection is the technology that creates leverage."</div>
+      </div>
+      <div class="starter-card">
+        <div class="topic">The Quiet Flex</div>
+        <div class="opener">"Built across layers."</div>
+      </div>
+    </div>
+
+    <h3>Talk titles (working list)</h3>
+    <ul style="list-style: none; margin: 24px 0 0;">
+      <li style="padding: 14px 0 14px 22px; position: relative; border-bottom: 1px solid rgba(0,194,122,0.08); font-size: 17px;">
+        <span style="position: absolute; left: 0; top: 22px; width: 12px; height: 1px; background: var(--emerald);"></span>
+        <strong style="color: var(--white);">Layers:</strong> Why Innovation Doesn't Scale Without Them
+      </li>
+      <li style="padding: 14px 0 14px 22px; position: relative; border-bottom: 1px solid rgba(0,194,122,0.08); font-size: 17px;">
+        <span style="position: absolute; left: 0; top: 22px; width: 12px; height: 1px; background: var(--emerald);"></span>
+        <strong style="color: var(--white);">2+2=9:</strong> The Math of Connected Systems
+      </li>
+      <li style="padding: 14px 0 14px 22px; position: relative; border-bottom: 1px solid rgba(0,194,122,0.08); font-size: 17px;">
+        <span style="position: absolute; left: 0; top: 22px; width: 12px; height: 1px; background: var(--emerald);"></span>
+        <strong style="color: var(--white);">The Connector:</strong> The Highest-Leverage Role in Any System
+      </li>
+      <li style="padding: 14px 0 14px 22px; position: relative; border-bottom: 1px solid rgba(0,194,122,0.08); font-size: 17px;">
+        <span style="position: absolute; left: 0; top: 22px; width: 12px; height: 1px; background: var(--emerald);"></span>
+        <strong style="color: var(--white);">Built in the Heartland:</strong> Why the Future of American Innovation Isn't on the Coasts
+      </li>
+      <li style="padding: 14px 0 14px 22px; position: relative; font-size: 17px;">
+        <span style="position: absolute; left: 0; top: 22px; width: 12px; height: 1px; background: var(--emerald);"></span>
+        <strong style="color: var(--white);">Connection Compounds:</strong> The Math Most Consulting Firms Don't Believe In
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════ 05 · QUICK REFERENCE ═══════ -->
+<section class="chapter">
+  <div class="container">
+    <div class="chapter-num">05 · Quick Reference</div>
+    <h2 class="chapter-title">The whole brand language, <em>at a glance.</em></h2>
+    <p class="intro">Everything in one place, for when you need to grab a line quickly.</p>
+
+    <h3>The five-tier language system</h3>
+    <ul style="list-style: none; margin: 24px 0;">
+      <li style="padding: 12px 0; border-bottom: 1px solid rgba(0,194,122,0.08);"><strong style="color: var(--emerald); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; display: block; margin-bottom: 6px;">The Name</strong><span style="font-family: 'Fraunces', serif; font-size: 20px; color: var(--white);">MindScapes</span></li>
+      <li style="padding: 12px 0; border-bottom: 1px solid rgba(0,194,122,0.08);"><strong style="color: var(--emerald); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; display: block; margin-bottom: 6px;">The Word</strong><span style="font-family: 'Fraunces', serif; font-size: 20px; color: var(--white); font-style: italic;">Layers.</span></li>
+      <li style="padding: 12px 0; border-bottom: 1px solid rgba(0,194,122,0.08);"><strong style="color: var(--emerald); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; display: block; margin-bottom: 6px;">The Line</strong><span style="font-family: 'Fraunces', serif; font-size: 20px; color: var(--white); font-style: italic;">Connection compounds.</span></li>
+      <li style="padding: 12px 0; border-bottom: 1px solid rgba(0,194,122,0.08);"><strong style="color: var(--emerald); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; display: block; margin-bottom: 6px;">The Headline</strong><span style="font-family: 'Fraunces', serif; font-size: 20px; color: var(--white);">Innovation doesn't scale without the layers beneath it.</span></li>
+      <li style="padding: 12px 0;"><strong style="color: var(--emerald); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; display: block; margin-bottom: 6px;">The Positioning</strong><span style="font-size: 16px; color: var(--mist-l);">MindScapes connects the systems most organizations build in silos — infrastructure, workforce, and AI — into one architecture for digital transformation.</span></li>
+    </ul>
+
+    <h3>The Operating Principle (keynote only)</h3>
+    <p style="font-family: 'Fraunces', serif; font-size: 32px; color: var(--white); margin: 16px 0;">2 + 2 = <em style="font-style: italic; font-weight: 700; background: linear-gradient(135deg, var(--emerald), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">9</em></p>
+    <p style="font-style: italic; color: var(--mist);">Even, even, odd. Addition AND multiplication, plus one for emergence.</p>
+  </div>
+</section>
+
+<!-- ═══════ CLOSE ═══════ -->
+<section class="close-section">
+  <div class="wordmark">
+    <span class="mind">Mind</span><span class="scapes">Scapes</span>
+  </div>
+  <div class="brand-line">Connection compounds.</div>
+  <div class="copy">Language Toolkit · Companion to the Brand Guide · © 2026</div>
+</section>
+
+</body>
+</html>
