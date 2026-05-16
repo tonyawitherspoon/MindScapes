@@ -736,6 +736,44 @@ section.layer { padding: 96px 0; border-top: 1px solid rgba(0,194,122,0.08); }
   line-height: 1.75;
   margin-bottom: 22px;
 }
+.engagement-includes {
+  background: rgba(0,194,122,0.04);
+  border-left: 2px solid rgba(0,194,122,0.4);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 22px 18px 22px;
+  margin-bottom: 22px;
+}
+.engagement-includes .includes-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 12px;
+}
+.includes-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 8px 28px;
+  margin: 0;
+}
+.includes-list li {
+  font-size: 14px;
+  color: var(--mist-l);
+  line-height: 1.55;
+  padding: 5px 0 5px 16px;
+  position: relative;
+}
+.includes-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 8px;
+  height: 1px;
+  background: var(--emerald);
+}
 .engagement-meta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
