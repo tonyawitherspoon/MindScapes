@@ -1328,45 +1328,6 @@ section.layer { padding: 96px 0; border-top: 1px solid rgba(0,194,122,0.08); }
   color: var(--mist);
   line-height: 1.7;
 }
-.essay-sources {
-  margin-top: 48px;
-}
-.essay-sources summary {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 18px;
-  color: var(--white);
-  cursor: pointer;
-  padding: 16px 0;
-  border-top: 1px solid rgba(0,194,122,0.15);
-  border-bottom: 1px solid rgba(0,194,122,0.05);
-  list-style: none;
-}
-.essay-sources summary::-webkit-details-marker { display: none; }
-.essay-sources summary::after {
-  content: ' +';
-  color: var(--emerald);
-  float: right;
-  font-weight: 400;
-}
-.essay-sources[open] summary::after { content: ' −'; }
-.essay-sources-body {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--mist);
-  padding-top: 16px;
-}
-.essay-sources-body p { margin-bottom: 14px; }
-.essay-sources-body strong { color: var(--mist-l); font-weight: 500; }
-.essay-sources-body a {
-  color: var(--emerald);
-  text-decoration: none;
-  border-bottom: 1px dotted rgba(0,194,122,0.3);
-}
-
-@media (min-width: 720px) {
-  .essay-sources { /* default open on desktop */ }
-}
 
 /* Related essays */
 .related-essays {
@@ -1532,6 +1493,105 @@ section.layer { padding: 96px 0; border-top: 1px solid rgba(0,194,122,0.08); }
   .worked-example { padding: 26px 24px; }
   .worked-example-title { font-size: 21px; }
 }
+
+/* ═══════ THANK YOU PAGE (inquiry-received) ═══════ */
+.thanks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+.thanks-card {
+  background: var(--panel);
+  border: 1px solid rgba(0,194,122,0.15);
+  border-radius: 14px;
+  padding: 28px 30px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.thanks-card:hover {
+  border-color: rgba(0,194,122,0.35);
+  transform: translateY(-2px);
+}
+.thanks-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 12px;
+}
+.thanks-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin: 0 0 12px;
+}
+.thanks-card p {
+  font-size: 14.5px;
+  color: var(--mist-l);
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+@media (max-width: 720px) {
+  .thanks-card { padding: 24px 22px; }
+}
+
+/* ═══════ UTILITY CLASSES (replaces inline styles) ═══════ */
+
+/* Era color tokens for timeline dots and labels (Work + Home) */
+.era-current .dot, .dot.dot-current { background: var(--cyan); }
+.era-current .era-label, .era-label.era-current { color: var(--cyan); }
+
+.era-infrastructure .dot, .dot.dot-infrastructure { background: var(--cyan-d); }
+.era-infrastructure .era-label, .era-label.era-infrastructure { color: var(--cyan-d); }
+
+.era-building .dot, .dot.dot-building { background: var(--emerald); }
+.era-building .era-label, .era-label.era-building { color: var(--emerald); }
+
+.era-crisis .dot, .dot.dot-crisis { background: var(--emerald-d); }
+.era-crisis .era-label, .era-label.era-crisis { color: var(--emerald-d); }
+
+.era-commercial .dot, .dot.dot-commercial { background: var(--cyan-d); }
+.era-commercial .era-label, .era-label.era-commercial { color: var(--cyan-d); }
+
+.era-early-digital .dot, .dot.dot-early-digital { background: var(--emerald); }
+.era-early-digital .era-label, .era-label.era-early-digital { color: var(--emerald); }
+
+.era-early-vision .dot, .dot.dot-early-vision { background: var(--emerald); }
+.era-early-vision .era-label, .era-label.era-early-vision { color: var(--emerald); }
+
+/* Section padding/spacing utility classes */
+.section-no-top-border { border-top: none; padding-top: 24px; }
+.section-no-top-border-pad-lg { border-top: none; padding-top: 24px; padding-bottom: 80px; }
+.section-balanced-pad { padding-top: 40px; padding-bottom: 40px; }
+
+/* Inline action wrappers */
+.center-action { text-align: center; margin-top: 40px; }
+
+/* Background tint for sections */
+.bg-tint-emerald { background: linear-gradient(180deg, rgba(0,194,122,0.03), transparent); }
+
+/* Typography utility */
+.text-sm { font-size: 14px; }
+.lead-tight { margin-bottom: 16px; }
+
+/* Form supporting copy */
+.form-note {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--mist);
+  text-align: center;
+}
+
+/* Inline emerald link (replaces ad-hoc style overrides) */
+.link-emerald {
+  color: var(--emerald);
+  text-decoration: none;
+}
+.link-emerald:hover { text-decoration: underline; }
 
 /* ═══════ DESIGNATIONS & RECOGNITION (Insights page) ═══════ */
 .designation-card {

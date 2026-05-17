@@ -36,13 +36,22 @@
   <div class="container">
     <div class="eyebrow">Request a Brief</div>
     <h1>Let's <em>connect.</em></h1>
-    <p class="lead">Tell us a bit about what you're working on and which engagement type fits best. We'll respond within two business days with next steps for a discovery conversation. Not sure which engagement is right? <a href="services.html" style="color: var(--emerald);">See the full Services page →</a></p>
+    <p class="lead">Tell us a bit about what you're working on and which engagement type fits best. We'll respond within two business days with next steps for a discovery conversation. Not sure which engagement is right? <a href="services.html" class="link-emerald">See the full Services page →</a></p>
   </div>
 </section>
 
-<section class="layer" style="border-top: none; padding-top: 24px; padding-bottom: 80px;">
+<section class="layer section-no-top-border-pad-lg">
   <div class="container reveal">
-    <form class="inquiry-form" action="mailto:tonya.witherspoon@mindscapes.tech" method="post" enctype="text/plain">
+    <form class="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+
+      <!-- Web3Forms configuration -->
+      <input type="hidden" name="access_key" value="a29a2053-3fb8-44d2-838c-82a6a2959ac3"/>
+      <input type="hidden" name="subject" value="New MindScapes Inquiry"/>
+      <input type="hidden" name="from_name" value="MindScapes Website"/>
+      <!-- TODO: When mindscapes.tech goes live, update this redirect URL to https://mindscapes.tech/inquiry-received.html -->
+      <input type="hidden" name="redirect" value="https://tonyawitherspoon.github.io/MindScapes/inquiry-received.html"/>
+      <!-- Honeypot field for spam protection (must stay empty) -->
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none"/>
 
       <div class="form-row">
         <label for="name">Your Name</label>
@@ -94,9 +103,9 @@
 
       <button type="submit" class="form-submit">Send Inquiry</button>
 
-      <p style="margin-top: 18px; font-size: 13px; color: var(--mist); text-align: center;">
+      <p class="form-note">
         Prefer email? Reach Tonya directly at
-        <a href="mailto:tonya.witherspoon@mindscapes.tech" style="color: var(--emerald); text-decoration: none;">tonya.witherspoon@mindscapes.tech</a>
+        <a href="mailto:tonya.witherspoon@mindscapes.tech" class="link-emerald">tonya.witherspoon@mindscapes.tech</a>
       </p>
 
     </form>
