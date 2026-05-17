@@ -2275,6 +2275,23 @@ footer {
   transition: color 0.3s;
 }
 .footer-col a:hover { color: var(--emerald); }
+.footer-line {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0,194,122,0.08);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--mist-l);
+  text-align: center;
+  opacity: 0.75;
+}
+.footer-line + .footer-copy {
+  padding-top: 8px;
+  border-top: none;
+}
 .footer-copy {
   max-width: var(--max-w);
   margin: 0 auto;
@@ -2798,10 +2815,71 @@ footer {
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* ═══════ MOBILE NAV TOGGLE ═══════ */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(0,194,122,0.25);
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 18px;
+  line-height: 1;
+  margin-left: 12px;
+  transition: border-color 0.2s ease;
+}
+.nav-toggle:hover { border-color: rgba(0,194,122,0.5); }
+.nav-toggle:focus-visible { outline: 2px solid var(--emerald); outline-offset: 2px; }
+.nav-toggle .bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--white);
+  margin: 4px 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
 /* ═══════ RESPONSIVE ═══════ */
 @media (max-width: 900px) {
-  .nav-links { gap: 18px; }
-  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-toggle { display: inline-block; }
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 22px 22px;
+    background: rgba(5,15,26,0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,194,122,0.15);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.3s ease;
+  }
+  .nav-links.open {
+    max-height: 600px;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 18px 22px 24px;
+  }
+  .nav-links a:not(.nav-cta) {
+    display: block;
+    padding: 14px 0;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0,194,122,0.08);
+  }
+  .nav-links a.nav-cta {
+    margin-top: 14px;
+    text-align: center;
+  }
 }
 @media (max-width: 768px) {
   :root { --gutter: 22px; }
