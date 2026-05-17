@@ -896,6 +896,62 @@ section.layer { padding: 96px 0; border-top: 1px solid rgba(0,194,122,0.08); }
   .engagement-meta { grid-template-columns: 1fr; gap: 12px; }
 }
 
+/* ═══════ REDUCED MOTION (Accessibility) ═══════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .featured-essay:hover,
+  .essay-card:hover,
+  .related-card:hover,
+  .alumni-card:hover,
+  .ecosystem-card:hover {
+    transform: none !important;
+  }
+  .featured-essay:hover img,
+  .essay-card:hover img {
+    transform: none !important;
+  }
+}
+
+/* ═══════ INSIGHTS HERO ACTIONS ═══════ */
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.invite-btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(0,194,122,0.4);
+  color: var(--white);
+}
+
+/* Section spacing utilities for Insights page */
+.section-tight {
+  border-top: none;
+  padding-top: 20px;
+}
+.section-themes {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.eyebrow-spaced {
+  margin-bottom: 24px;
+}
+.section-header-tight {
+  margin-bottom: 28px;
+}
+
 /* ═══════ INSIGHTS — FEATURED ESSAY & GRID ═══════ */
 
 .featured-essay {
@@ -1100,6 +1156,18 @@ section.layer { padding: 96px 0; border-top: 1px solid rgba(0,194,122,0.08); }
   max-width: 760px;
   margin: 0 auto;
   padding: 32px 32px 100px;
+}
+.essay-breadcrumb {
+  font-size: 13px;
+  color: var(--mist);
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.essay-breadcrumb:hover {
+  color: var(--emerald);
 }
 .essay-article-header {
   margin-bottom: 36px;
