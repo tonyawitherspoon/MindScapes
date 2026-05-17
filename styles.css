@@ -1413,6 +1413,58 @@ section.layer { padding: 96px 0; border-top: 1px solid rgba(0,194,122,0.08); }
   .essay-cta { padding: 28px 24px; }
 }
 
+/* Worked Example Block (Two Doors essay) */
+.worked-example {
+  background: var(--panel);
+  border: 1px solid rgba(0,194,122,0.18);
+  border-radius: 14px;
+  padding: 32px 36px;
+  margin: 36px 0;
+}
+.worked-example-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 8px;
+}
+.worked-example-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--white);
+  margin: 0 0 24px;
+}
+.we-section {
+  padding: 16px 0;
+  border-top: 1px solid rgba(0,194,122,0.08);
+}
+.we-section:first-of-type {
+  border-top: none;
+  padding-top: 8px;
+}
+.we-section-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--emerald);
+  margin-bottom: 8px;
+}
+.we-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--mist-l);
+  margin: 0;
+}
+@media (max-width: 720px) {
+  .worked-example { padding: 26px 24px; }
+  .worked-example-title { font-size: 21px; }
+}
+
 /* ═══════ TEACHER AT HEART (Leadership page) ═══════ */
 .teacher-section {
   background: linear-gradient(180deg, rgba(0,194,122,0.02) 0%, transparent 100%);
