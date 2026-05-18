@@ -1605,6 +1605,79 @@ section.layer { padding: 96px 0; border-top: 1px solid rgba(0,194,122,0.08); }
 }
 .link-emerald:hover { text-decoration: underline; }
 
+/* ═══════ PROOF BEHIND THE PERSPECTIVE (bridge on Insights page) ═══════ */
+.proof-bridge {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 8px 0;
+}
+.proof-bridge-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 18px;
+}
+.proof-bridge p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  color: var(--mist-l);
+  margin: 0;
+}
+
+/* ═══════ ESSAY NOTES AND SOURCES (collapsible, default closed) ═══════ */
+.essay-sources {
+  margin-top: 48px;
+}
+.essay-sources summary {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  color: var(--mist-l);
+  cursor: pointer;
+  padding: 14px 0;
+  border-top: 1px solid rgba(0,194,122,0.15);
+  border-bottom: 1px solid rgba(0,194,122,0.05);
+  list-style: none;
+  transition: color 0.2s ease;
+}
+.essay-sources summary:hover { color: var(--white); }
+.essay-sources summary::-webkit-details-marker { display: none; }
+.essay-sources summary::after {
+  content: ' +';
+  color: var(--emerald);
+  float: right;
+  font-weight: 400;
+}
+.essay-sources[open] summary::after { content: ' −'; }
+.essay-sources-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--mist);
+  padding-top: 18px;
+}
+.essay-sources-body p {
+  margin-bottom: 16px;
+}
+.essay-sources-body p:last-child { margin-bottom: 0; }
+.essay-sources-body strong {
+  color: var(--mist-l);
+  font-weight: 600;
+}
+.essay-sources-body a {
+  color: var(--emerald);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(0,194,122,0.3);
+  transition: border-bottom-color 0.2s ease;
+}
+.essay-sources-body a:hover { border-bottom-color: var(--emerald); }
+
 /* ═══════ BEST FIRST ENGAGEMENT (Services page) ═══════ */
 .first-step-grid {
   display: grid;
