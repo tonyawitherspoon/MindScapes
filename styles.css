@@ -1630,6 +1630,48 @@ section.layer { padding: 96px 0; border-top: 1px solid rgba(0,194,122,0.08); }
   margin: 0;
 }
 
+/* ═══════ IN BRIEF BOX (essay top summary, AEO + skim aid) ═══════ */
+.in-brief {
+  background: rgba(0,194,122,0.04);
+  border-left: 3px solid var(--emerald);
+  border-radius: 4px;
+  padding: 22px 26px 22px 28px;
+  margin: 0 0 36px;
+}
+.in-brief-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  margin-bottom: 14px;
+}
+.in-brief ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.in-brief ul li {
+  position: relative;
+  padding: 6px 0 6px 22px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--mist-l);
+}
+.in-brief ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 12px;
+  height: 1px;
+  background: var(--emerald);
+}
+@media (max-width: 720px) {
+  .in-brief { padding: 20px 22px; }
+  .in-brief ul li { font-size: 14.5px; }
+}
+
 /* ═══════ ESSAY NOTES AND SOURCES (collapsible, default closed) ═══════ */
 .essay-sources {
   margin-top: 48px;
